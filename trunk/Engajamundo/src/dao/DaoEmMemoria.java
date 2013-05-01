@@ -37,7 +37,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 			}
 
 		} catch (Exception e) {
-			throw new CadastroExcpetion();
+			throw new CadastroExcpetion("Erro no cadastro");
 		}
 
 		return action;
