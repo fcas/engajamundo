@@ -2,7 +2,7 @@ package dao;
 
 import java.util.ArrayList;
 
-import exceptions.CadastroExcpetion;
+import exceptions.ValidatorException;
 
 import model.Engajador;
 
@@ -23,7 +23,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 		this.engajadores = new ArrayList<Engajador>();
 	}
 
-	public String cadastrarEngajador(Engajador engajador) throws CadastroExcpetion {
+	public String cadastrarEngajador(Engajador engajador) throws ValidatorException {
 
 		String action = null;
 
@@ -37,7 +37,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 			}
 
 		} catch (Exception e) {
-			throw new CadastroExcpetion("Erro no cadastro");
+			throw new ValidatorException("Erro no cadastro");
 		}
 
 		return action;

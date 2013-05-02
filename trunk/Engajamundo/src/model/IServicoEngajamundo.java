@@ -1,9 +1,9 @@
 package model;
 
-import exceptions.CadastroExcpetion;
+import exceptions.ValidatorException;
 
 public interface IServicoEngajamundo {
 	
-	void cadastrarEngajador(Engajador engajador) throws CadastroExcpetion;
+	void cadastrarEngajador(Engajador engajador) throws ValidatorException;
 
 }

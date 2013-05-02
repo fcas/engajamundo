@@ -1,10 +1,10 @@
 package dao;
 
-import exceptions.CadastroExcpetion;
+import exceptions.ValidatorException;
 import model.Engajador;
 
 public interface IDAOEngajador {
 
-	String cadastrarEngajador(Engajador engajador) throws CadastroExcpetion;
+	String cadastrarEngajador(Engajador engajador) throws ValidatorException;
 
 }
