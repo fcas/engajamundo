@@ -45,6 +45,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 
 		for (int i = 0; i < engajadores.size(); i++) {
 			if (engajadores.get(i).getNome().equals(engajador.getNome())) {
+				System.out.println("Resultado:" + engajador.getNome());
 				return engajador;
 			}
 
