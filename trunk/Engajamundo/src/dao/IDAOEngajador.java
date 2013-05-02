@@ -15,4 +15,5 @@ public interface IDAOEngajador {
 
 	ArrayList<Engajador> buscarEngajador(String query) throws DaoException;
 
+	ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException;
 }

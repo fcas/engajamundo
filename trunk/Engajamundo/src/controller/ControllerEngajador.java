@@ -11,10 +11,18 @@ public class ControllerEngajador {
 
 	private Engajador engajador;
 	private ArrayList<Engajador> usuarios;
+	private ArrayList<Boolean> del;
 	private boolean buscou = false;
 	private String query;
 	IServicoUsuario servicoUsuario = ServicoUsuario
 			.getInstance();
+	
+	public void iniciarDel(int tam)
+	{
+		del = new ArrayList();
+		for (int i = 0; i < tam; i++)
+			del.add(false);
+	}
 	
 	public ControllerEngajador() {
 		engajador = new Engajador();
@@ -23,6 +31,7 @@ public class ControllerEngajador {
 	
 	public String editar(){
 		usuarios = (ArrayList<Engajador>) servicoUsuario.getUsers();
+		iniciarDel(usuarios.size());
 		return "Editar";
 	}
 
@@ -42,9 +51,26 @@ public class ControllerEngajador {
 
 	}
 	
+	public String deletar() {
+		
+		try {
+			for (int i = 0; i < usuarios.size(); i++)
+			{
+				if (usuarios.get(i).isSelecionado())
+					usuarios.remove(i);
+			}
+			return "sucesso";
+		}
+		catch (Exception e)
+		{
+			return "erro";
+		}
+		
+	}
 	public String visualizar()
 	{
 		usuarios = (ArrayList<Engajador>) servicoUsuario.getUsers();
+		iniciarDel(usuarios.size());
 		return "Visualizar";
 	}
 	
@@ -65,11 +91,44 @@ public class ControllerEngajador {
 		return "sucesso";
 	}
 	
-	public String buscarEngajador() {
+	public String buscar()
+	{
+		return "Buscar";
+	}
+	
+	public String buscarPorPais()
+	{
+		buscou = false;
+		query = "";
+		return "BuscarPorPais";
+	}
+	
+	public String buscarPorNome() {
+		buscou = false;
+		query = "";
+		return "BuscarPorNome";
+	}
+	
+	public String buscarEngajadorPorNome() {
 
 		String action = "";
 		try {
 			usuarios = servicoUsuario.buscarEngajador(query);
+			iniciarDel(usuarios.size());
+			buscou = true;
+		} catch (DaoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return action;
+	}
+	
+	public String buscarEngajadorPorPais() {
+
+		String action = "";
+		try {
+			usuarios = servicoUsuario.buscarEngajadorPorPais(query);
+			iniciarDel(usuarios.size());
 			buscou = true;
 		} catch (DaoException e) {
 			// TODO Auto-generated catch block

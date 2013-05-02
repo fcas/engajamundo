@@ -1,19 +1,34 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="f"  uri="http://java.sun.com/jsf/core"%>
-<%@ taglib prefix="h"  uri="http://java.sun.com/jsf/html"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Busca por Nome</title>
 </head>
 <body>
-<f:view>
+	<f:view>
 		<h:form>
-			<h:commandButton action="/ManterUsuario.jsp" value="Voltar"></h:commandButton><br><br>
+			<h:commandButton action="/busca.jsp" value="Voltar"></h:commandButton><br><br>
 		</h:form>
-		<h1> Lista de Usuários </h1>
+		<h1> Busca por Nome </h1>
+			<h:form>
+			<h:panelGrid columns="3">
+				<h:outputLabel value="Nome: " for="nome" />
+				<h:inputText label="Nome" id="nome" required="true"
+					value="#{controllerEngajador.query}">
+					<f:validator validatorId="nomeValidator" />
+				</h:inputText>
+				<h:message for="nome" errorStyle="color:red; display:block" />
+				<h:commandButton action="#{controllerEngajador.buscarEngajadorPorNome}"
+					value="Buscar"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+			
+		<h:panelGroup rendered="#{controllerEngajador.buscou==true}">
 		<h:form>
 			<table border="0" cellspacing="0" cellpadding="10">
 				<tr><th></th><th>Nome</th><th>Sobrenome</th><th>Email</th></tr>
@@ -29,6 +44,7 @@
 			<h:commandButton action="#{controllerEngajador.deletar}"
 					value="Deletar itens selecionados"></h:commandButton>
 		</h:form>
-</f:view>
+	</h:panelGroup>
+	</f:view>
 </body>
 </html>
