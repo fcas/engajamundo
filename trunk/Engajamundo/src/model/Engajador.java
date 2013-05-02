@@ -13,6 +13,8 @@ public class Engajador {
 	private String estado; 
 	private String pais;
 	private String comentarios;
+	private String login;
+	private String senha;
 	private boolean selecionado;
 	
 	public Engajador(){
@@ -21,7 +23,7 @@ public class Engajador {
 
 	
 	public Engajador(String nome, String sobrenome, String email,
-			String data_nascimento, int telefone, String pais) {
+			String data_nascimento, int telefone, String pais, String login, String senha) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
@@ -30,6 +32,8 @@ public class Engajador {
 		this.telefone = telefone;
 		this.pais = pais;
 		this.selecionado = false;
+		this.login = login;
+		this.senha = senha;
 	}
 
 
@@ -133,6 +137,26 @@ public class Engajador {
 
 	public void setSelecionado(boolean selecionado) {
 		this.selecionado = selecionado;
+	}
+
+
+	public String getLogin() {
+		return login;
+	}
+
+
+	public String getSenha() {
+		return senha;
+	}
+
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 }

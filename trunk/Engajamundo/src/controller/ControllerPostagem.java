@@ -17,11 +17,10 @@ public class ControllerPostagem {
 	
 	public String postar()
 	{
-		String[] tags = tagAux.trim().split(";");
-		post.setTags((ArrayList<String>)Arrays.asList(tags));
-		servicoPostagem.postar(post);
+		servicoPostagem.postar(post, tagAux);
 		return "";
 	}
+	
 	public Postagem getPost() {
 		return post;
 	}

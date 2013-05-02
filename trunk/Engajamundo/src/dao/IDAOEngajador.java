@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import exceptions.DaoException;
 import model.Engajador;
+import model.Postagem;
 
 public interface IDAOEngajador {
 
@@ -16,4 +17,8 @@ public interface IDAOEngajador {
 	ArrayList<Engajador> buscarEngajador(String query) throws DaoException;
 
 	ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException;
+	
+	void savePost(Postagem post);
+
+	Engajador autenticar(String login, String senha);
 }

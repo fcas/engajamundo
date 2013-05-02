@@ -15,4 +15,6 @@ public interface IServicoUsuario {
 	ArrayList<Engajador> buscarEngajador(String engajador) throws DaoException;
 
 	ArrayList<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException;
+
+	Engajador autenticar(String login, String senha);
 }

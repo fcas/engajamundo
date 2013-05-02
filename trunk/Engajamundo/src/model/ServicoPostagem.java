@@ -1,5 +1,11 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
 import dao.DaoEmMemoria;
 import dao.IDAOEngajador;
 
@@ -23,8 +29,15 @@ public class ServicoPostagem {
 
 	}
 	
-	public void postar(Postagem post)
+	public void postar(Postagem post, String tagAux)
 	{
+		String[] tags = tagAux.trim().split(";");
+		post.setTags((ArrayList<String>)Arrays.asList(tags));
 		
+		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+		Engajador engajador = (Engajador)session.getAttribute("Usuario");
+		post.setAutor(engajador);
+		
+		daoEngajador.savePost(post);
 	}
 }
