@@ -51,31 +51,30 @@
 				<h:outputLabel value="Skype: "></h:outputLabel>
 				<h:inputText id="skype"
 					value="#{controllerEngajador.engajador.profile_skype}"></h:inputText>
-				<h:message for="skype" errorStyle="color:red; display:block" />
+				<br>
 
 				<h:outputLabel value="Link da página do Facebook: "></h:outputLabel>
 				<h:inputText id="facebook"
 					value="#{controllerEngajador.engajador.profile_facebook}"></h:inputText>
-				<h:message for="facebook" errorStyle="color:red; display:block" />
-
+				<br>
 				<h:outputLabel value="Cidade: "></h:outputLabel>
 				<h:inputText id="cidade"
 					value="#{controllerEngajador.engajador.cidade}"></h:inputText>
-				<h:message for="cidade" errorStyle="color:red; display:block" />
-
+				<br>
+				
 				<h:outputLabel value="Estado: "></h:outputLabel>
 				<h:inputText id="estado"
 					value="#{controllerEngajador.engajador.estado}"></h:inputText>
-				<h:message for="estado" errorStyle="color:red; display:block" />
+				<br>
 
 				<h:outputLabel value="Pais: "></h:outputLabel>
 				<h:inputText id="pais" value="#{controllerEngajador.engajador.pais}"></h:inputText>
-				<h:message for="pais" errorStyle="color:red; display:block" />
+				<br>
 
 				<h:outputLabel value="Comentários: "></h:outputLabel>
 				<h:inputTextarea
 					value="#{controllerEngajador.engajador.comentarios}"></h:inputTextarea>
-
+				<br><br><br>
 				<h:commandButton action="#{controllerEngajador.cadastrarEngajador}"
 					value="Cadastrar"></h:commandButton>
 			</h:panelGrid>

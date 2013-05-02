@@ -18,6 +18,18 @@ public class Engajador {
 		
 	}
 
+	
+	public Engajador(String nome, String sobrenome, String email,
+			String data_nascimento, int telefone) {
+		super();
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.email = email;
+		this.data_nascimento = data_nascimento;
+		this.telefone = telefone;
+	}
+
+
 	public Engajador(String nome) {
 		this.nome = nome; 
 	}

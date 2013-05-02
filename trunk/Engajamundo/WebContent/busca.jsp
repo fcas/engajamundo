@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
 <%@ taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +15,7 @@
 			<h:panelGrid columns="3">
 				<h:outputLabel value="Nome: " for="nome" />
 				<h:inputText label="Nome" id="nome" required="true"
-					value="#{controllerEngajador.engajador.nome}">
+					value="#{controllerEngajador.query}">
 					<f:validator validatorId="nomeValidator" />
 				</h:inputText>
 				<h:message for="nome" errorStyle="color:red; display:block" />
@@ -22,6 +23,21 @@
 					value="Buscar"></h:commandButton>
 			</h:panelGrid>
 		</h:form>
+			
+		<h:panelGroup rendered="#{controllerEngajador.buscou==true}">
+		<h:form>
+			<table border="0" cellspacing="0" cellpadding="10">
+				<tr><th>Nome</th><th>Sobrenome</th><th>Email</th></tr>
+				<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
+					<tr>
+					<td><h:outputLabel value="#{usuario.nome}"></h:outputLabel></td>
+					<td><h:outputLabel value="#{usuario.sobrenome}"></h:outputLabel></td>
+					<td><h:outputLabel value="#{usuario.email}"></h:outputLabel></td>
+					</tr>
+				</c:forEach>
+			</table>
+		</h:form>
+	</h:panelGroup>
 	</f:view>
 </body>
 </html>
