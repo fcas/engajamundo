@@ -11,6 +11,12 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
+	<managed-bean>
+		<managed-bean-name>controllerPostagem</managed-bean-name>
+		<managed-bean-class>controller.ControllerPostagem</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 	<navigation-rule>
 		<display-name>ManterUsuario</display-name>
 		<from-view-id>/ManterUsuario.jsp</from-view-id>
@@ -25,6 +31,10 @@
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/Visualizacao.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Buscar</from-outcome>
+			<to-view-id>/busca.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -69,6 +79,45 @@
 		<navigation-case>
 			<from-outcome>erro</from-outcome>
 			<to-view-id>/OperacaoFail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>BuscaPorPais</display-name>
+		<from-view-id>/buscaPorPais.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/OperacaoSucesso.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/OperacaoFail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>BuscaPorNome</display-name>
+		<from-view-id>/buscaPorNome.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/OperacaoSucesso.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/OperacaoFail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>Busca</display-name>
+		<from-view-id>/busca.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>BuscarPorNome</from-outcome>
+			<to-view-id>/buscaPorNome.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>BuscarPorPais</from-outcome>
+			<to-view-id>/buscaPorPais.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	

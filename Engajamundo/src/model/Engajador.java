@@ -12,7 +12,8 @@ public class Engajador {
 	private String cidade;
 	private String estado; 
 	private String pais;
-	private String comentarios; 
+	private String comentarios;
+	private boolean selecionado;
 	
 	public Engajador(){
 		
@@ -20,13 +21,15 @@ public class Engajador {
 
 	
 	public Engajador(String nome, String sobrenome, String email,
-			String data_nascimento, int telefone) {
+			String data_nascimento, int telefone, String pais) {
 		super();
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.data_nascimento = data_nascimento;
 		this.telefone = telefone;
+		this.pais = pais;
+		this.selecionado = false;
 	}
 
 
@@ -120,6 +123,16 @@ public class Engajador {
 
 	public void setComentarios(String comentarios) {
 		this.comentarios = comentarios;
+	}
+
+
+	public boolean isSelecionado() {
+		return selecionado;
+	}
+
+
+	public void setSelecionado(boolean selecionado) {
+		this.selecionado = selecionado;
 	}
 
 }

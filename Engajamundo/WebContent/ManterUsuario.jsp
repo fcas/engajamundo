@@ -15,8 +15,8 @@
 	<h:panelGrid columns="2">
 	<h:form>
 		<h:commandButton action="#{controllerEngajador.visualizar}" value="Visualizar"></h:commandButton>
+		<h:commandButton action="#{controllerEngajador.buscar}" value="Buscar"></h:commandButton>
 		<h:commandButton action="#{controllerEngajador.cadastrar}" value="Cadastrar"></h:commandButton>
-		<h:commandButton action="#{controllerEngajador.deletar}" value="Deletar"></h:commandButton>
 		<h:commandButton action="#{controllerEngajador.editar}" value="Editar"></h:commandButton>
 		
 	</h:form>

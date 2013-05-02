@@ -49,5 +49,10 @@ public class ServicoUsuario implements IServicoUsuario {
 	public ArrayList<Engajador> buscarEngajador(String query) throws DaoException {
 		return daoEngajador.buscarEngajador(query);		
 	}
+	
+	@Override
+	public ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException {
+		return daoEngajador.buscarEngajadorPorPais(query);		
+	}
 
 }

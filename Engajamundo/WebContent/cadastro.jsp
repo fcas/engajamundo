@@ -11,6 +11,10 @@
 <body>
 	<f:view>
 		<h:form>
+			<h:commandButton action="/ManterUsuario.jsp" value="Voltar"></h:commandButton><br><br>
+		</h:form>
+		<h1> Cadastro </h1>
+		<h:form>
 			<h:panelGrid columns="3">
 				<h:outputLabel value="Nome: " for="nome" />
 				<h:inputText label="Nome" id="nome" required="true"
