@@ -55,4 +55,9 @@ public class ServicoUsuario implements IServicoUsuario {
 		return daoEngajador.buscarEngajadorPorPais(query);		
 	}
 
+	@Override
+	public Engajador autenticar(String login, String senha)
+	{
+		return daoEngajador.autenticar(login, senha);
+	}
 }
