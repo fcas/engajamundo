@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13666415320760" configfile="/Engajamundo/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="cadastroSucesso" x="468" y="132" id="pf13669013502332" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13669014781454" path="/cadastroSucesso.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="cadastro" x="144" y="156" id="pf13669014781455" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13669014781454 pf13669015218696" path="/cadastro.jsp"/>
-  <nodes xsi:type="pageflow:PFPage" name="cadastroFail" x="468" y="240" id="pf13669015218697" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13669015218696" path="/cadastroFail.jsp"/>
-  <links id="pf13669014781454" target="pf13669013502332" source="pf13669014781455" outcome="sucesso"/>
-  <links id="pf13669015218696" target="pf13669015218697" source="pf13669014781455" outcome="erro"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastro" x="300" y="612" id="pf13669014781455" referenceLink="//@navigationRule.1/@fromViewId|" inlinks="pf13675117219070" path="/cadastro.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="ManterUsuario" x="72" y="548" id="pf13675117219081" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13675117219070 pf13675117730052 pf13675117730053" path="/ManterUsuario.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Visualizacao" x="252" y="468" id="pf13675117730054" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf13675117730052" path="/Visualizacao.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="192" y="720" id="pf13675117730055" referenceLink="//@navigationRule.2/@fromViewId|" inlinks="pf13675117730053" path="/Edicao.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoSucesso" x="464" y="606" id="pf13675150817338" path="/OperacaoSucesso.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoFail" x="500" y="744" id="pf13675150817339" path="/OperacaoFail.jsp"/>
+  <links id="pf13675117219070" target="pf13669014781455" source="pf13675117219081" outcome="Cadastrar"/>
+  <links id="pf13675117730052" target="pf13675117730054" source="pf13675117219081" outcome="Visualizar"/>
+  <links id="pf13675117730053" target="pf13675117730055" source="pf13675117219081" outcome="Editar"/>
 </pageflow:Pageflow>

@@ -1,18 +1,17 @@
-package dao;
+package model;
 
 import java.util.ArrayList;
 
 import exceptions.DaoException;
-import model.Engajador;
 
-public interface IDAOEngajador {
-
+public interface IServicoUsuario {
+	
 	void cadastrarEngajador(Engajador engajador) throws DaoException;
 
-	ArrayList<Engajador> getUsers();
+	Object getUsers();
 
 	void saveUsers(ArrayList<Engajador> usuarios);
 
-	ArrayList<Engajador> buscarEngajador(String query) throws DaoException;
+	ArrayList<Engajador> buscarEngajador(String engajador) throws DaoException;
 
 }

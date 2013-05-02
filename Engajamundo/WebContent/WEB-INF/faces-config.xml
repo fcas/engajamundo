@@ -10,28 +10,67 @@
 		<managed-bean-class>controller.ControllerEngajador</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
-	<managed-bean>
-		<managed-bean-name>engajador</managed-bean-name>
-		<managed-bean-class>model.Engajador</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
-	</managed-bean>
 
 	<navigation-rule>
-		<display-name>cadastro</display-name>
-		<from-view-id>/cadastro.jsp</from-view-id>
+		<display-name>ManterUsuario</display-name>
+		<from-view-id>/ManterUsuario.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>erro</from-outcome>
-			<to-view-id>/cadastroFail.jsp</to-view-id>
+			<from-outcome>Cadastrar</from-outcome>
+			<to-view-id>/cadastro.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Editar</from-outcome>
+			<to-view-id>/Edicao.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/Visualizacao.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>OperacaoSucesso</display-name>
+		<from-view-id>/OperacaoSucesso.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>manterUsuario</from-outcome>
+			<to-view-id>/ManterUsuario.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>OperacaoFail</display-name>
+		<from-view-id>/OperacaoFail.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>manterUsuario</from-outcome>
+			<to-view-id>/ManterUsuario.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	<navigation-rule>
 		<display-name>cadastro</display-name>
 		<from-view-id>/cadastro.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/cadastroSucesso.jsp</to-view-id>
+			<to-view-id>/OperacaoSucesso.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/OperacaoFail.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-
+	
+	<navigation-rule>
+		<display-name>Edicao</display-name>
+		<from-view-id>/Edicao.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/OperacaoSucesso.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/OperacaoFail.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
 </faces-config>

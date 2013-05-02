@@ -8,9 +8,11 @@
 <title>Cadastro</title>
 </head>
 <body>
-<h2> Erro no cadastro... </h2>
 <f:view>
-
+<h:form>
+<h2> Erro na operacao... </h2>
+<h:commandButton action="#{controllerEngajador.manterUsuario}" value="Voltar"></h:commandButton>
+</h:form>
 </f:view>
 </body>
 </html>
