@@ -70,14 +70,13 @@
 
 				<h:outputLabel value="Pais: "></h:outputLabel>
 				<h:inputText id="pais" value="#{controllerEngajador.engajador.pais}"></h:inputText>
-				<h:message for="pais]" errorStyle="color:red; display:block" />
+				<h:message for="pais" errorStyle="color:red; display:block" />
 
 				<h:outputLabel value="Comentários: "></h:outputLabel>
 				<h:inputTextarea
 					value="#{controllerEngajador.engajador.comentarios}"></h:inputTextarea>
 
-
-				<h:commandButton action="#{controllerEngajador.controllerEngajador}"
+				<h:commandButton action="#{controllerEngajador.cadastrarEngajador}"
 					value="Cadastrar"></h:commandButton>
 			</h:panelGrid>
 		</h:form>
