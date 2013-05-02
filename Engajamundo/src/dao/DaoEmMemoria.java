@@ -2,7 +2,7 @@ package dao;
 
 import java.util.ArrayList;
 
-import exceptions.ValidatorException;
+import exceptions.DaoException;
 
 import model.Engajador;
 
@@ -23,9 +23,8 @@ public class DaoEmMemoria implements IDAOEngajador {
 		this.engajadores = new ArrayList<Engajador>();
 	}
 
-	public String cadastrarEngajador(Engajador engajador) throws ValidatorException {
-
-		String action = null;
+	public void cadastrarEngajador(Engajador engajador)
+			throws DaoException {
 
 		try {
 
@@ -35,13 +34,23 @@ public class DaoEmMemoria implements IDAOEngajador {
 				System.out.println(engajadores.get(i).getNome()
 						+ " foi cadastrado com sucesso!!!");
 			}
-
 		} catch (Exception e) {
-			throw new ValidatorException("Erro no cadastro");
+			throw new DaoException("Erro no cadastro");
 		}
 
-		return action;
+	}
 
+	@Override
+	public Engajador buscarEngajador(Engajador engajador) throws DaoException {
+
+		for (int i = 0; i < engajadores.size(); i++) {
+			if (engajadores.get(i).getNome().equals(engajador.getNome())) {
+				return engajador;
+			}
+
+		}
+
+		throw new DaoException("Usuário não encontrado");
 	}
 
 }

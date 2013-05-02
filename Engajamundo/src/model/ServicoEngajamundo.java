@@ -2,7 +2,7 @@ package model;
 
 import dao.DaoEmMemoria;
 import dao.IDAOEngajador;
-import exceptions.ValidatorException;
+import exceptions.DaoException;
 
 public class ServicoEngajamundo implements IServicoEngajamundo {
 
@@ -26,8 +26,13 @@ public class ServicoEngajamundo implements IServicoEngajamundo {
 
 	@Override
 	public void cadastrarEngajador(Engajador engajador)
-			throws ValidatorException {
+			throws DaoException {
 			this.daoEngajador.cadastrarEngajador(engajador);
+	}
+
+	@Override
+	public void buscarEngajador(Engajador engajador) throws DaoException {
+		this.daoEngajador.buscarEngajador(engajador);		
 	}
 
 }
