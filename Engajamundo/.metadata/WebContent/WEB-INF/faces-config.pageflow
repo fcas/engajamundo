@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13666415320760" configfile="/JSF/WebContent/WEB-INF/faces-config.xml">
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13666415320760" configfile="/Engajamundo/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="cadastroSucesso" x="468" y="132" id="pf13669013502332" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13669014781454" path="/cadastroSucesso.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="cadastro" x="144" y="156" id="pf13669014781455" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13669014781454 pf13669015218696" path="/cadastro.jsp"/>
   <nodes xsi:type="pageflow:PFPage" name="cadastroFail" x="468" y="240" id="pf13669015218697" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13669015218696" path="/cadastroFail.jsp"/>
