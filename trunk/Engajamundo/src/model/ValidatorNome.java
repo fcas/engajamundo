@@ -17,7 +17,7 @@ public class ValidatorNome implements Validator {
 	    String nome = String.valueOf(value);
 	    boolean valid = true;
 	    
-		if (nome.isEmpty()) {
+		if (nome.isEmpty() || value == null) {
 			valid = false; 
 		}
 		
