@@ -7,11 +7,11 @@ import model.ServicoUsuario;
 public class ControllerSession {
 
 	Engajador usuarioAtual;
-	String login, senha;
+	private String login, senha;
 	IServicoUsuario servicoUsuario = ServicoUsuario
 			.getInstance();
 	
-	public String autenticar(String login, String senha)
+	public String autenticar()
 	{
 		usuarioAtual = servicoUsuario.autenticar(login, senha);
 		if (usuarioAtual != null)
