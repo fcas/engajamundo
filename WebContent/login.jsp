@@ -10,9 +10,13 @@
 <body>
 <f:view>
 	<h:form>
-		<p>Login: </p><h:inputText required="true" value="#{controllerSession.login}"></h:inputText>
+		<p>Login: </p><h:inputText required="true" id = "login" value="#{controllerSession.login}">
+		<f:validator validatorId="loginValidator"/>
+		</h:inputText>
+		
 		<p>Senha: </p><h:inputSecret required="true" value="#{controllerSession.senha}"></h:inputSecret><br><br>
 		<h:commandButton action="#{controllerSession.autenticar}" value="Entrar!"></h:commandButton>
+		<h:message for="login" errorStyle="color:red; display:block" />
 	</h:form>
 </f:view>
 </body>

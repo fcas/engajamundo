@@ -91,6 +91,8 @@ public class DaoEmMemoria implements IDAOEngajador {
 			return usuarios;
 	}
 	
+	
+	
 	@Override
 	public Engajador autenticar(String login, String senha)
 	{
@@ -108,5 +110,18 @@ public class DaoEmMemoria implements IDAOEngajador {
 	public void savePost(Postagem post)
 	{
 		postagens.add(post);
+	}
+
+	@Override
+	public boolean existeLogin(String login) {
+		
+		for (int i = 0; i < engajadores.size(); i++)
+		{
+			if (engajadores.get(i).getLogin().equals(login))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 }

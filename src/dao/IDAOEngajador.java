@@ -21,4 +21,6 @@ public interface IDAOEngajador {
 	void savePost(Postagem post);
 
 	Engajador autenticar(String login, String senha);
+	
+	boolean existeLogin(String login);
 }
