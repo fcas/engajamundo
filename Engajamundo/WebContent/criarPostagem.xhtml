@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+	<f:view>
+		<h:form>
+			<h:commandButton action="/busca.jsp" value="Voltar"></h:commandButton>
+			<br></br>
+			<br></br>
+		</h:form>
+		<h1> Criar Postagem </h1>
+		<h:form>
+			<p>Título: </p><h:inputText value="#{controllerPostagem.post.titulo}"></h:inputText>
+			<p>Texto: </p><h:inputTextarea  value="#{controllerPostagem.post.texto}" style="height: 119px; width: 384px; "></h:inputTextarea>
+			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.tagAux}" style="width: 384px; "></h:inputText><br></br><br></br>
+			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
+		</h:form>
+
+	</f:view>
+</body>
+</html>

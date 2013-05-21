@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+    version="2.1">
+    
+    <managed-bean>
+		<managed-bean-name>controllerEngajador</managed-bean-name>
+		<managed-bean-class>controller.ControllerEngajador</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>controllerPostagem</managed-bean-name>
+		<managed-bean-class>controller.ControllerPostagem</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<managed-bean>
+		<managed-bean-name>controllerSession</managed-bean-name>
+		<managed-bean-class>controller.ControllerSession</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+	<navigation-rule>
+		<display-name>ManterUsuario</display-name>
+		<from-view-id>/manterUsuario.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Cadastrar</from-outcome>
+			<to-view-id>/cadastro.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Editar</from-outcome>
+			<to-view-id>/edicao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Buscar</from-outcome>
+			<to-view-id>/busca.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>OperacaoSucesso</display-name>
+		<from-view-id>/operacaoSucesso.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>manterUsuario</from-outcome>
+			<to-view-id>/manterUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>OperacaoFail</display-name>
+		<from-view-id>/operacaoFail.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>manterUsuario</from-outcome>
+			<to-view-id>/manterUsuario.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>cadastro</display-name>
+		<from-view-id>/cadastro.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/operacaoFail.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>Edicao</display-name>
+		<from-view-id>/edicao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/operacaoFail.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>BuscaPorPais</display-name>
+		<from-view-id>/buscaPorPais.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/operacaoFail.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>BuscaPorNome</display-name>
+		<from-view-id>/buscaPorNome.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/operacaoFail.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>Busca</display-name>
+		<from-view-id>/busca.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>BuscarPorNome</from-outcome>
+			<to-view-id>/buscaPorNome.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>BuscarPorPais</from-outcome>
+			<to-view-id>/buscaPorPais.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<validator>
+		<display-name>loginValidator</display-name>
+		<validator-id>loginValidator</validator-id>
+		<validator-class>model.ValidatorLogin</validator-class>
+	</validator>
+	
+	<navigation-rule>
+		<display-name>login</display-name>
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sucesso</from-outcome>
+			<to-view-id>/manterUsuario.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/operacaoFail.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+</faces-config>
+
+
