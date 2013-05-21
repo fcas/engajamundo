@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13690483497430" configfile="/Engajamundo/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="ManterUsuario" id="pf13690483976311" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf13691473217730 pf13691473217731 pf13691473217732 pf13691473217733" inlinks="pf13691473217735 pf136914752120520 pf136914752120521" path="/manterUsuario.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Busca" x="27" y="-252" id="pf136904839763216" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf136914752120522 pf136914752120523" path="/busca.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="BuscaPorPais" x="498" y="-319" id="pf136904839763226" referenceLink="//@navigationRule.7/@navigationCase.1/@toViewId|" outlinks="pf13691473217746 pf13691473217747" inlinks="pf136914752120523" path="/buscaPorPais.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="BuscaPorNome" x="252" y="-204" id="pf136904839763327" referenceLink="//@navigationRule.7/@navigationCase.0/@toViewId|" outlinks="pf136914752120524 pf136914752120525" inlinks="pf136914752120522" path="/buscaPorNome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login" x="534" y="84" id="pf136904839763328" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf136914752120521 pf136914752120626" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastro" x="534" y="180" id="pf13691473217758" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf13691473217759 pf136914732177510" inlinks="pf13691473217730" path="/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="534" y="-24" id="pf136914732177511" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf136914732177512 pf136914732177513" inlinks="pf13691473217731" path="/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="visualizacao.xhtml" x="276" y="216" id="pf136914732177514" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf13691473217732" path="/visualizacao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="busca.xhtml" x="56" y="-125" id="pf136914732177515" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf13691473217733" path="/busca.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoFail" x="924" y="-12" id="pf136914732177516" referenceLink="//@navigationRule.8/@navigationCase.1/@toViewId|" outlinks="pf13691473217735" inlinks="pf136914732177510 pf136914732177513 pf13691473217747 pf136914752120525 pf136914752120626" path="/operacaoFail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoSucesso" x="888" y="-192" id="pf136914732177517" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf136914752120520" inlinks="pf13691473217759 pf136914732177512 pf13691473217746 pf136914752120524" path="/operacaoSucesso.xhtml"/>
+  <links id="pf13691473217730" target="pf13691473217758" source="pf13690483976311" outcome="Cadastrar"/>
+  <links id="pf13691473217731" target="pf136914732177511" source="pf13690483976311" outcome="Editar"/>
+  <links id="pf13691473217732" target="pf136914732177514" source="pf13690483976311" outcome="Visualizar"/>
+  <links id="pf13691473217733" target="pf136914732177515" source="pf13690483976311" outcome="Buscar"/>
+  <links id="pf13691473217735" target="pf13690483976311" source="pf136914732177516" outcome="manterUsuario"/>
+  <links id="pf13691473217759" target="pf136914732177517" source="pf13691473217758" outcome="sucesso"/>
+  <links id="pf136914732177510" target="pf136914732177516" source="pf13691473217758" outcome="erro"/>
+  <links id="pf136914732177512" target="pf136914732177517" source="pf136914732177511" outcome="sucesso"/>
+  <links id="pf136914732177513" target="pf136914732177516" source="pf136914732177511" outcome="erro"/>
+  <links id="pf13691473217746" target="pf136914732177517" source="pf136904839763226" outcome="sucesso"/>
+  <links id="pf13691473217747" target="pf136914732177516" source="pf136904839763226" outcome="erro"/>
+  <links id="pf136914752120524" target="pf136914732177517" source="pf136904839763327" outcome="sucesso"/>
+  <links id="pf136914752120525" target="pf136914732177516" source="pf136904839763327" outcome="erro"/>
+  <links id="pf136914752120520" target="pf13690483976311" source="pf136914732177517" outcome="manterUsuario"/>
+  <links id="pf136914752120522" target="pf136904839763327" source="pf136904839763216" outcome="BuscarPorNome"/>
+  <links id="pf136914752120523" target="pf136904839763226" source="pf136904839763216" outcome="BuscarPorPais"/>
+  <links id="pf136914752120521" target="pf13690483976311" source="pf136904839763328" outcome="sucesso"/>
+  <links id="pf136914752120626" target="pf136914732177516" source="pf136904839763328" outcome="erro"/>
+</pageflow:Pageflow>
