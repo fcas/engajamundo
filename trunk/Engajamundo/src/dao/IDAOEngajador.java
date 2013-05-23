@@ -3,7 +3,7 @@ package dao;
 import java.util.ArrayList;
 
 import exceptions.DaoException;
-import model.Engajador;
+import entities.Engajador;
 import model.Postagem;
 
 public interface IDAOEngajador {

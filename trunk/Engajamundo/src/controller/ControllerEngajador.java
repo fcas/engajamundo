@@ -2,11 +2,14 @@ package controller;
 
 import java.util.ArrayList;
 
+import javax.faces.bean.ManagedBean;
+
 import exceptions.DaoException;
-import model.Engajador;
+import entities.Engajador;
 import model.IServicoUsuario;
 import model.ServicoUsuario;
 
+@ManagedBean(name="controllerEngajador")
 public class ControllerEngajador {
 
 	private Engajador engajador;

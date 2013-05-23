@@ -17,7 +17,7 @@ public class ValidatorNome implements Validator {
 			Object obj) throws ValidatorException {
 		
 		String nome = (String) obj;
-		if (nome.length() != 50){
+		if (nome.length() > 50){
 			FacesMessage msg = new FacesMessage();
             msg.setDetail("Digite menos do que 50 caracteres");
             msg.setSummary("Limite de caracteres excedido");

@@ -4,6 +4,7 @@
 	<persistence-unit name="engajamundoDB">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>entities.Produto</class>
+		<class>entities.Engajador</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

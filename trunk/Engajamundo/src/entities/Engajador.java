@@ -13,20 +13,29 @@ public class Engajador {
 	private String nome;
 	@Column(name="sobrenome", length=50)
 	private String sobrenome;
-	@Column(name="nome", length=100)
+	@Column(name="email", length=50)
 	private String email;
+	@Column(name="dataNascimento", length=10)
 	private String data_nascimento; 
+	@Column(name="telefone", length=12)
 	private int telefone; 
+	@Column(name="skype", length=20)
 	private String profile_skype; 
+	@Column(name="fbProfile", length=50)
 	private String profile_facebook;
+	@Column(name="cidade", length=30)
 	private String cidade;
-	private String estado; 
+	@Column(name="estado", length=30)
+	private String estado;
+	@Column(name="pais", length=30)
 	private String pais;
 	private String comentarios;
 	@Id
 	@Column(name="login", length=20)
 	private String login;
+	@Column(name="senha", length=16)
 	private String senha;
+	
 	private boolean selecionado;
 	
 	public Engajador(){
