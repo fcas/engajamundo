@@ -13,7 +13,7 @@ public class TestaInsereProduto {
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
 		Produto p = new Produto();
-		p.setNome("camisetaa");
+		p.setNome("camisa");
 		p.setPreco(12);
 		
 		em.getTransaction().begin();

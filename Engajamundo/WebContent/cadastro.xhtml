@@ -14,7 +14,7 @@
 		<h:form>
 			<h:panelGrid columns="3">
 				<h:outputLabel value="Nome: " for="nome" />
-				<h:inputText label="Nome" id="nome" required="true"
+				<h:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.nome}">
 					<f:validator validatorId="nomeValidator" />
 				</h:inputText>

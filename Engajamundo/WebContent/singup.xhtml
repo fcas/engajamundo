@@ -35,14 +35,14 @@
 <h:form>
 			<h:panelGrid columns="3">
 				<h:outputLabel value="Nome: " for="nome" />
-				<h:inputText label="Nome" id="nome" required="true"
+				<h:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.nome}">
 					<f:validator validatorId="nomeValidator" />
 				</h:inputText>
 				<h:message for="nome" errorStyle="color:red; display:block" />
 
 				<h:outputLabel value="Sobrenome: " for="sobrenome" />
-				<h:inputText label="Sobrenome" id="sobrenome" required="true"
+				<h:inputText label="Sobrenome" id="sobrenome" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.sobrenome}">
 					<f:validator validatorId="nomeValidator" />
 				</h:inputText>
@@ -50,21 +50,21 @@
 
 
 				<h:outputLabel value="Email: " for="email" />
-				<h:inputText label="Email" id="email" required="true"
+				<h:inputText label="Email" id="email" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.email}">
 					<f:validator validatorId="emailValidator" />
 				</h:inputText>
 				<h:message for="email" errorStyle="color:red; display:block" />
 
 				<h:outputLabel value="Data de nascimento: " for="data" />
-				<h:inputText label="Data" id="data" required="true"
+				<h:inputText label="Data" id="data" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.data_nascimento}">
 					<f:validator validatorId="dataValidator" />
 				</h:inputText>
 				<h:message for="data" errorStyle="color:red; display:block" />
 
 				<h:outputLabel value="Telefone: " for="telefone" />
-				<h:inputText label="Telefone" id="telefone" required="true"
+				<h:inputText label="Telefone" id="telefone"
 					value="#{controllerEngajador.engajador.telefone}">
 					<f:validator validatorId="telefoneValidator" />
 				</h:inputText>
@@ -80,18 +80,33 @@
 					value="#{controllerEngajador.engajador.profile_facebook}"></h:inputText>
 				<br></br>
 				<h:outputLabel value="Cidade: "></h:outputLabel>
-				<h:inputText id="cidade"
+				<h:inputText id="cidade" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.cidade}"></h:inputText>
-				<br></br>
+                                <h:message for="cidade" errorStyle="color:red; display:block" />
+				
 				
 				<h:outputLabel value="Estado: "></h:outputLabel>
-				<h:inputText id="estado"
+				<h:inputText id="estado" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.estado}"></h:inputText>
-				<br></br>
+                                <h:message for="estado" errorStyle="color:red; display:block" />
+			
 
 				<h:outputLabel value="Pais: "></h:outputLabel>
-				<h:inputText id="pais" value="#{controllerEngajador.engajador.pais}"></h:inputText>
-				<br></br>
+				<h:inputText id="pais" value="#{controllerEngajador.engajador.pais}" 
+                                   required="true" requiredMessage="Campo obrigatório"></h:inputText>
+                                <h:message for="pais" errorStyle="color:red; display:block" />
+
+				<h:outputLabel value="Login: " for="login" />
+				<h:inputText label="Login" id="login" required="true" requiredMessage="Campo obrigatório"
+					value="#{controllerEngajador.engajador.login}">
+					<f:validator validatorId="loginValidator" />
+				</h:inputText>
+				<h:message for="login" errorStyle="color:red; display:block" />
+
+				<h:outputLabel value="Senha: " for="senha" />
+				<h:inputSecret label="Senha" id="senha" required="true" requiredMessage="Campo obrigatório"
+					value="#{controllerEngajador.engajador.senha}">
+				</h:inputSecret><br></br>
 
 				<h:outputLabel value="Comentários: "></h:outputLabel>
 				<h:inputTextarea
