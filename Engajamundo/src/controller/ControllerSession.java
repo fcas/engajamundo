@@ -1,6 +1,6 @@
 package controller;
 
-import model.Engajador;
+import entities.Engajador;
 import model.IServicoUsuario;
 import model.ServicoUsuario;
 

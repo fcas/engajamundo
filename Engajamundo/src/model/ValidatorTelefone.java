@@ -14,20 +14,20 @@ public class ValidatorTelefone implements Validator {
 	public void validate(FacesContext context, UIComponent component,
 			Object value) throws ValidatorException {
 		
-		  	String telefone = String.valueOf(value);
-		    boolean valid = true;
-
-		if ((telefone.length() < 8)) {
-			valid = false;
-		}
-		
-		if (!valid) {
-            FacesMessage message = new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR, "Telefone", "Insira um telefone válido");
-            throw new ValidatorException(message);
-        }
-
-		
+//		  	String telefone = String.valueOf(value);
+//		    boolean valid = true;
+//
+//		if ((telefone.length() < 8)) {
+//			valid = false;
+//		}
+//		
+//		if (!valid) {
+//            FacesMessage message = new FacesMessage(
+//                    FacesMessage.SEVERITY_ERROR, "Telefone", "Insira um telefone válido");
+//            throw new ValidatorException(message);
+//        }
+//
+//		
 	}
 
 }

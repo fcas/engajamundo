@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+import entities.Engajador;
 import exceptions.DaoException;
 
 public interface IServicoUsuario {

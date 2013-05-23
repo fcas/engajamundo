@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import exceptions.DaoException;
 
-import model.Engajador;
+import entities.Engajador;
 import model.Postagem;
 
 public class DaoEmMemoria implements IDAOEngajador {

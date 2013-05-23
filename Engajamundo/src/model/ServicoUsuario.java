@@ -2,8 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
-import dao.DaoEmMemoria;
+import dao.DaoHibernate;
 import dao.IDAOEngajador;
+import entities.Engajador;
 import exceptions.DaoException;
 
 public class ServicoUsuario implements IServicoUsuario {
@@ -13,7 +14,7 @@ public class ServicoUsuario implements IServicoUsuario {
 	private IDAOEngajador daoEngajador;
 
 	public ServicoUsuario() {
-		this.daoEngajador = new DaoEmMemoria();
+		this.daoEngajador = new DaoHibernate();
 	}
 
 	public static IServicoUsuario getInstance() {

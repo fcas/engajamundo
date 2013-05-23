@@ -3,22 +3,29 @@ package testes;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import controller.ControllerEngajador;
+
+import dao.DaoHibernate;
+
+import entities.Engajador;
 import entities.Produto;
+import exceptions.DaoException;
 
 public class TestaInsereProduto {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws DaoException {
 		
-		EntityManagerFactory factory = Persistence
-				.createEntityManagerFactory("engajamundoDB");
-		EntityManager em = factory.createEntityManager();
-		Produto p = new Produto();
-		p.setNome("camisa");
-		p.setPreco(12);
+		ControllerEngajador ce = new ControllerEngajador();
 		
-		em.getTransaction().begin();
-		em.persist(p);
-		em.getTransaction().commit();
+		DaoHibernate daoH = new DaoHibernate();
+		
+		Engajador p = new Engajador();
+		p.setLogin("er");
+		
+		ce.setEngajador(p);
+		ce.cadastrarEngajador();
+		
 		
 	}
 }
