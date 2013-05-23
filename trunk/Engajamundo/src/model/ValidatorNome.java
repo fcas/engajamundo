@@ -1,5 +1,7 @@
 package model;
 
+import java.util.regex.Pattern;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
@@ -12,20 +14,37 @@ public class ValidatorNome implements Validator {
 
 	@Override
 	public void validate(FacesContext context, UIComponent component,
-			Object value) throws ValidatorException {
+			Object obj) throws ValidatorException {
 		
-	    String nome = String.valueOf(value);
-	    boolean valid = true;
-	    
-		if (nome.isEmpty() || value == null) {
-			valid = false; 
+		String nome = (String) obj;
+		if (nome.length() != 50){
+			FacesMessage msg = new FacesMessage();
+            msg.setDetail("Digite menos do que 50 caracteres");
+            msg.setSummary("Limite de caracteres excedido");
+            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+            throw new ValidatorException(msg);
+		}
+
+		if (obj == null || obj.equals(null))
+		{
+			FacesMessage msg = new FacesMessage();
+            msg.setDetail("Campo Obrigatório!");
+            msg.setSummary("Erro de nome");
+            msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+            throw new ValidatorException(msg);
 		}
 		
-		if (!valid) {
-            FacesMessage message = new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR, "Nome inválido", "Insira um nome válido");
-            throw new ValidatorException(message);
-        }
+		else {
+			String n = (String) obj;
+			if (!Pattern.matches("[a-zA-Z]+", n))
+			{
+				FacesMessage msg = new FacesMessage();
+				msg.setDetail("Esse campo somente pode conter letras");
+		        msg.setSummary("Erro de nome");
+		        msg.setSeverity(FacesMessage.SEVERITY_ERROR);
+		        throw new ValidatorException(msg);
+			}
+		}
 		
 	}
 
