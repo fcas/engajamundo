@@ -1,11 +1,12 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+
 import model.Postagem;
 import entities.Engajador;
 import exceptions.DaoException;
@@ -38,17 +39,35 @@ public class DaoHibernate implements IDAOEngajador {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public ArrayList<Engajador> buscarEngajador(String query)
+	public List<Engajador> buscarEngajador(String nome)
 			throws DaoException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em.createQuery("select f from Engajador f where nome = :nome");
+		query.setParameter("nome", nome);
+ 
+        return query.getResultList();
+
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
-	public ArrayList<Engajador> buscarEngajadorPorPais(String query)
+	public List<Engajador> buscarEngajadorPorPais(String pais)
 			throws DaoException {
-		return null;
+		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em.createQuery("select f from Engajador f where pais = :pais");
+		query.setParameter("pais", pais);
+ 
+        return query.getResultList();
 	}
 
 	@Override
@@ -59,14 +78,33 @@ public class DaoHibernate implements IDAOEngajador {
 
 	@Override
 	public Engajador autenticar(String login, String senha) {
-		// TODO Auto-generated method stub
-		return null;
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em
+				.createQuery("select f from Engajador f where login = :login and senha = :senha");
+		query.setParameter("login", login);
+		query.setParameter("senha", senha);
+		
+		return (Engajador) query.getSingleResult();
+		
 	}
 
 	@Override
 	public boolean existeLogin(String login) {
 	
-		return true;
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em
+				.createQuery("select f from Engajador f where login = :login");
+		query.setParameter("login", login);
+
+		if (query.getResultList().isEmpty()) {
+			return false;
+		} else return true;
 	}
 
 }

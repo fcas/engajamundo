@@ -18,10 +18,10 @@ public class ValidatorLogin implements Validator{
 			throws ValidatorException {
 		IDAOEngajador daoEngajador = new DaoHibernate();
 
-		if(!daoEngajador.existeLogin(String.valueOf(value))){
+		if(daoEngajador.existeLogin(String.valueOf(value))){
 			System.out.println("Excecao DAO");
             FacesMessage message = new FacesMessage(
-                    FacesMessage.SEVERITY_ERROR, "", "Nome do usuario não existente");
+                    FacesMessage.SEVERITY_ERROR, "", "Esse login já existe");
             throw new ValidatorException(message);
 		}
 	}

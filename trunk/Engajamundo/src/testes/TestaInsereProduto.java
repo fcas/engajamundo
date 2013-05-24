@@ -1,7 +1,5 @@
 package testes;
 
-import java.util.List;
-
 import controller.ControllerEngajador;
 import dao.DaoHibernate;
 import entities.Engajador;
