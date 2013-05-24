@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <div id="bg">
 
 <div id="cssmenu">
@@ -18,9 +17,6 @@
    <br></br><br></br><br></br><br></br><br></br>
    
    <object id="like" type="text/html" data="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/engajamundo?fref=ts" border="0" align="left" style="border:none; width:400px; padding-left:120px;position:relative;height:60px;"></object>
-   
-   
-   
    
    <div id="listamenu">
    <a href = "home.xhtml">Inicio</a>
@@ -39,24 +35,24 @@
 
 <div id="login">
 
-<form action="welcome.php" method="get">
-
+	<h:form>
 		<div id="user"> 
-	  		Usuario:
-	  		<input style="width: 120px;" type="text" name="user"/>
+	  		Login: <h:inputText style="width: 120px;" required="true" id = "login" value="#{controllerSession.login}">
+			<f:validator validatorId="loginValidator"/>
+			</h:inputText>
     	</div>
 	
 		<div id="password">
-	  		Senha: &nbsp;
-	  		<input style="width: 120px;" type="password" name="password"/>
+	  		Senha:<h:inputSecret style="width: 120px;" required="true" value="#{controllerSession.senha}"></h:inputSecret>
+		    <h:message for="login" errorStyle="color:red; display:block" />
 		</div>
 
 	<p></p>
 		<div id="button-login">
-		 <input type="submit" value="Login"/>
+		  <h:commandButton action="#{controllerSession.autenticar}" value="Entrar!"></h:commandButton>
 		</div>		
 
-</form>
+	</h:form>
 
 </div>
 
