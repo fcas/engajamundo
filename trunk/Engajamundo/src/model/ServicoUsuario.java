@@ -33,11 +33,6 @@ public class ServicoUsuario implements IServicoUsuario {
 		return daoEngajador.getUsers();
 	}
 	
-	public void saveUsers(ArrayList<Engajador> usuarios)
-	{
-		daoEngajador.saveUsers(usuarios);
-	}
-	
 	@Override
 	public void cadastrarEngajador(Engajador engajador) {
 		try {

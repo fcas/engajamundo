@@ -6,22 +6,19 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
-	
 import model.Postagem;
 import entities.Engajador;
 import exceptions.DaoException;
 
 public class DaoHibernate implements IDAOEngajador {
 	
-	EntityManager em;
-	
 	public DaoHibernate(){
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
-		em = factory.createEntityManager();
+		
 	}
 	
 	public void cadastrarEngajador(Engajador engajador) throws DaoException {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(engajador);
 		em.getTransaction().commit();	
@@ -30,20 +27,15 @@ public class DaoHibernate implements IDAOEngajador {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Engajador> getUsers() {
-		 Query query = em.createNativeQuery("select d from Dog d", Engajador.class);
-		 
-		 for (int i = 0; i < query.getResultList().size(); i++) {
-			System.out.println(query.getResultList().get(i));
-		}
-		 
-	        return query.getResultList();
-	
-	}
 
-	@Override
-	public void saveUsers(ArrayList<Engajador> usuarios) {
-		// TODO Auto-generated method stub
-		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		String query = "select f from Engajador f";
+
+		return em.createQuery(query).getResultList();
+
 	}
 
 	@Override

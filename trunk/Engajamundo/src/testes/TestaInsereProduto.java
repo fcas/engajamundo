@@ -1,5 +1,7 @@
 package testes;
 
+import java.util.List;
+
 import controller.ControllerEngajador;
 import dao.DaoHibernate;
 import entities.Engajador;
@@ -15,10 +17,14 @@ public class TestaInsereProduto {
 		DaoHibernate daoH = new DaoHibernate();
 		
 		Engajador p = new Engajador();
-		p.setLogin("er");
+		p.setLogin("bbbbb");
 		
 		ce.setEngajador(p);
-		ce.cadastrarEngajador();
+//		ce.cadastrarEngajador();
+		
+//		List<Engajador> lista; 
+		ce.buscarEngajadores();
+
 		
 		
 	}

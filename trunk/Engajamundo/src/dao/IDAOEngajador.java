@@ -13,8 +13,6 @@ public interface IDAOEngajador {
 
 	List<Engajador> getUsers();
 
-	void saveUsers(ArrayList<Engajador> usuarios);
-
 	ArrayList<Engajador> buscarEngajador(String query) throws DaoException;
 
 	ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException;

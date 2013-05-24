@@ -32,10 +32,9 @@ public class ControllerEngajador {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public ControllerEngajador() {
 		engajador = new Engajador();
-		usuarios = new ArrayList();
+		usuarios = servicoUsuario.getUsers();
 	}
 	
-	@SuppressWarnings("unchecked")
 	public String editar(){
 		usuarios = (ArrayList<Engajador>) servicoUsuario.getUsers();
 		iniciarDel(usuarios.size());
@@ -74,7 +73,7 @@ public class ControllerEngajador {
 		}
 		
 	}
-	@SuppressWarnings("unchecked")
+	
 	public String visualizar()
 	{
 		usuarios = (List<Engajador>) servicoUsuario.getUsers();
@@ -156,8 +155,12 @@ public class ControllerEngajador {
 	public List<Engajador> getUsuarios() {
 		return usuarios;
 	}
+	
+	public List<Engajador> buscarEngajadores() {
+		return servicoUsuario.getUsers();
+	}
 
-	public void setUsuarios(ArrayList<Engajador> usuarios) {
+	public void setUsuarios(List<Engajador> usuarios) {
 		this.usuarios = usuarios;
 	}
 
