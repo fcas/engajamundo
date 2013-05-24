@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import entities.Engajador;
@@ -12,9 +11,9 @@ public interface IServicoUsuario {
 
 	List<Engajador> getUsers();
 
-	ArrayList<Engajador> buscarEngajador(String engajador) throws DaoException;
+	List<Engajador> buscarEngajador(String engajador) throws DaoException;
 
-	ArrayList<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException;
+	List<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException;
 
 	Engajador autenticar(String login, String senha);
 }

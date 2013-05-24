@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import dao.DaoHibernate;
@@ -43,12 +42,12 @@ public class ServicoUsuario implements IServicoUsuario {
 	}
 
 	@Override
-	public ArrayList<Engajador> buscarEngajador(String query) throws DaoException {
+	public List<Engajador> buscarEngajador(String query) throws DaoException {
 		return daoEngajador.buscarEngajador(query);		
 	}
 	
 	@Override
-	public ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException {
+	public List<Engajador> buscarEngajadorPorPais(String query) throws DaoException {
 		return daoEngajador.buscarEngajadorPorPais(query);		
 	}
 

@@ -29,7 +29,7 @@ public class ControllerEngajador {
 			del.add(false);
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ })
 	public ControllerEngajador() {
 		engajador = new Engajador();
 		usuarios = servicoUsuario.getUsers();

@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import exceptions.DaoException;
@@ -13,9 +12,9 @@ public interface IDAOEngajador {
 
 	List<Engajador> getUsers();
 
-	ArrayList<Engajador> buscarEngajador(String query) throws DaoException;
+	List<Engajador> buscarEngajador(String query) throws DaoException;
 
-	ArrayList<Engajador> buscarEngajadorPorPais(String query) throws DaoException;
+	List<Engajador> buscarEngajadorPorPais(String query) throws DaoException;
 	
 	void savePost(Postagem post);
 
