@@ -1,6 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 
@@ -13,7 +14,7 @@ import model.ServicoUsuario;
 public class ControllerEngajador {
 
 	private Engajador engajador;
-	private ArrayList<Engajador> usuarios;
+	private List<Engajador> usuarios;
 	private ArrayList<Boolean> del;
 	private boolean buscou = false;
 	private String query;
@@ -76,7 +77,7 @@ public class ControllerEngajador {
 	@SuppressWarnings("unchecked")
 	public String visualizar()
 	{
-		usuarios = (ArrayList<Engajador>) servicoUsuario.getUsers();
+		usuarios = (List<Engajador>) servicoUsuario.getUsers();
 		iniciarDel(usuarios.size());
 		return "Visualizar";
 	}
@@ -94,7 +95,7 @@ public class ControllerEngajador {
 	
 	public String atualizar()
 	{
-		servicoUsuario.saveUsers(usuarios);
+//		servicoUsuario.saveUsers(usuarios);
 		return "sucesso";
 	}
 	
@@ -152,7 +153,7 @@ public class ControllerEngajador {
 		this.engajador = engajador;
 	}
 
-	public ArrayList<Engajador> getUsuarios() {
+	public List<Engajador> getUsuarios() {
 		return usuarios;
 	}
 
