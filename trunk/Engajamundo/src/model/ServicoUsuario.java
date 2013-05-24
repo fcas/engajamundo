@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import dao.DaoHibernate;
 import dao.IDAOEngajador;
@@ -27,7 +28,7 @@ public class ServicoUsuario implements IServicoUsuario {
 
 	}
 
-	public ArrayList<Engajador> getUsers()
+	public List<Engajador> getUsers()
 	{
 		return daoEngajador.getUsers();
 	}
