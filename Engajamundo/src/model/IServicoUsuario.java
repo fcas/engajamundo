@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import entities.Engajador;
 import exceptions.DaoException;
@@ -9,9 +10,7 @@ public interface IServicoUsuario {
 	
 	void cadastrarEngajador(Engajador engajador) throws DaoException;
 
-	Object getUsers();
-
-	void saveUsers(ArrayList<Engajador> usuarios);
+	List<Engajador> getUsers();
 
 	ArrayList<Engajador> buscarEngajador(String engajador) throws DaoException;
 
