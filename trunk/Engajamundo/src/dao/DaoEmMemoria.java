@@ -127,4 +127,10 @@ public class DaoEmMemoria implements IDAOEngajador {
 		}
 		return false;
 	}
+
+	@Override
+	public boolean deletar(String login) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
