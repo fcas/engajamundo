@@ -9,8 +9,9 @@ public class Crowdfunding {
 
 	Double metaCapacitacao;
 	Double valorCapitado;
-	int qtdPatrocinadores;
 	Double porcentagem;
+	Double doacao;
+	int qtdPatrocinadores;
 	
 	public Double getMetaCapacitacao() {
 		return metaCapacitacao;
@@ -36,7 +37,5 @@ public class Crowdfunding {
 	public void setPorcentagem(Double porcentagem) {
 		this.porcentagem = porcentagem;
 	}
-	
-	
 	
 }
