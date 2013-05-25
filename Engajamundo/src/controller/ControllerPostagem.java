@@ -1,6 +1,6 @@
 package controller;
 
-import model.Postagem;
+import entities.Postagem;
 import model.ServicoPostagem;
 
 public class ControllerPostagem {

@@ -4,7 +4,7 @@ import java.util.List;
 
 import exceptions.DaoException;
 import entities.Engajador;
-import model.Postagem;
+import entities.Postagem;
 
 public interface IDAOEngajador {
 
