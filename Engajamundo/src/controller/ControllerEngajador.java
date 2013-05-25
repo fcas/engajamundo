@@ -81,40 +81,12 @@ public class ControllerEngajador {
 		return "Visualizar";
 	}
 	
-	public String manterUsuario()
-	{
-		return "manterUsuario";
-	}
-	
-	public String cadastrar()
-	{
-		return "Cadastrar";
-	}
-	
-	
 	public String atualizar()
 	{
 //		servicoUsuario.saveUsers(usuarios);
 		return "sucesso";
 	}
 	
-	public String buscar()
-	{
-		return "Buscar";
-	}
-	
-	public String buscarPorPais()
-	{
-		buscou = false;
-		query = "";
-		return "BuscarPorPais";
-	}
-	
-	public String buscarPorNome() {
-		buscou = false;
-		query = "";
-		return "BuscarPorNome";
-	}
 	
 	public String buscarEngajadorPorNome() {
 
