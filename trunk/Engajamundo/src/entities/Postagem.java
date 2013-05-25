@@ -1,9 +1,13 @@
-package model;
+package entities;
 
 import java.util.ArrayList;
 
-import entities.Engajador;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+
+@Entity
+@Table(schema="engajamundoDB")  
 public class Postagem {
 
 	private Engajador autor;

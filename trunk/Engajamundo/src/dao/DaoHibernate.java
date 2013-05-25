@@ -7,8 +7,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import model.Postagem;
 import entities.Engajador;
+import entities.Postagem;
 import exceptions.DaoException;
 
 public class DaoHibernate implements IDAOEngajador {

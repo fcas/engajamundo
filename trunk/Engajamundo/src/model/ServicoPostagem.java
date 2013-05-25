@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import dao.DaoEmMemoria;
 import dao.IDAOEngajador;
 import entities.Engajador;
+import entities.Postagem;
 
 public class ServicoPostagem {
 
