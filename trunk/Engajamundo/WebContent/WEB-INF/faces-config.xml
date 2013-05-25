@@ -19,47 +19,8 @@
 	</managed-bean>
 	
 	<navigation-rule>
-		<display-name>ManterUsuario</display-name>
-		<from-view-id>/manterUsuario.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>Cadastrar</from-outcome>
-			<to-view-id>/cadastro.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>Editar</from-outcome>
-			<to-view-id>/edicao.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>Visualizar</from-outcome>
-			<to-view-id>/visualizacao.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>Buscar</from-outcome>
-			<to-view-id>/busca.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>OperacaoSucesso</display-name>
-		<from-view-id>/operacaoSucesso.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>manterUsuario</from-outcome>
-			<to-view-id>/manterUsuario.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>OperacaoFail</display-name>
-		<from-view-id>/operacaoFail.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>manterUsuario</from-outcome>
-			<to-view-id>/manterUsuario.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>cadastro</display-name>
-		<from-view-id>/cadastro.xhtml</from-view-id>
+		<display-name>singup</display-name>
+		<from-view-id>/singup.xhtml</from-view-id>
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
@@ -76,58 +37,6 @@
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>erro</from-outcome>
-			<to-view-id>/operacaoFail.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>BuscaPorPais</display-name>
-		<from-view-id>/buscaPorPais.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>erro</from-outcome>
-			<to-view-id>/operacaoFail.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>BuscaPorNome</display-name>
-		<from-view-id>/buscaPorNome.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>erro</from-outcome>
-			<to-view-id>/operacaoFail.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>Busca</display-name>
-		<from-view-id>/busca.jsp</from-view-id>
-		<navigation-case>
-			<from-outcome>BuscarPorNome</from-outcome>
-			<to-view-id>/buscaPorNome.xhtml</to-view-id>
-		</navigation-case>
-		<navigation-case>
-			<from-outcome>BuscarPorPais</from-outcome>
-			<to-view-id>/buscaPorPais.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	
-	<navigation-rule>
-		<display-name>login</display-name>
-		<from-view-id>/login.xhtml</from-view-id>
-		<navigation-case>
-			<from-outcome>sucesso</from-outcome>
-			<to-view-id>/manterUsuario.xhtml</to-view-id>
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>erro</from-outcome>
