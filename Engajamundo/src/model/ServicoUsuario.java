@@ -56,4 +56,8 @@ public class ServicoUsuario implements IServicoUsuario {
 	{
 		return daoEngajador.autenticar(login, senha);
 	}
+	
+	public boolean deletar(String login) {
+		return daoEngajador.deletar(login);
+	}
 }

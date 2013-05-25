@@ -106,5 +106,22 @@ public class DaoHibernate implements IDAOEngajador {
 			return false;
 		} else return true;
 	}
+	
+	public boolean deletar(String login) {
+		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Engajador engajador = em.find(Engajador.class, login);
+		em.remove(engajador);
+		em.flush();
+	    System.out.println("Deleted");
+		
+		if (existeLogin(login)){
+			return false;
+		} else return true;
+
+	}
 
 }

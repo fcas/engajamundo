@@ -16,4 +16,7 @@ public interface IServicoUsuario {
 	List<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException;
 
 	Engajador autenticar(String login, String senha);
+	
+	boolean deletar(String login);
+	
 }

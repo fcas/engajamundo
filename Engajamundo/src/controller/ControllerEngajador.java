@@ -63,7 +63,7 @@ public class ControllerEngajador {
 			for (int i = 0; i < usuarios.size(); i++)
 			{
 				if (usuarios.get(i).isSelecionado())
-					usuarios.remove(i);
+					servicoUsuario.deletar(usuarios.get(i).getLogin());
 			}
 			return "sucesso";
 		}

@@ -21,4 +21,6 @@ public interface IDAOEngajador {
 	Engajador autenticar(String login, String senha);
 	
 	boolean existeLogin(String login);
+	
+	boolean deletar(String login);
 }
