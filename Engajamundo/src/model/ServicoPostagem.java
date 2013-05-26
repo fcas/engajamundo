@@ -6,9 +6,8 @@ import java.util.Arrays;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
-import dao.DaoEmMemoria;
+import dao.DaoHibernate;
 import dao.IDAOEngajador;
-import entities.Engajador;
 import entities.Postagem;
 
 public class ServicoPostagem {
@@ -18,7 +17,7 @@ public class ServicoPostagem {
 	private IDAOEngajador daoEngajador;
 
 	public ServicoPostagem() {
-		this.daoEngajador = new DaoEmMemoria();
+		this.daoEngajador = new DaoHibernate();
 	}
 
 	public static ServicoPostagem getInstance() {
@@ -37,8 +36,8 @@ public class ServicoPostagem {
 		post.setTags((ArrayList<String>)Arrays.asList(tags));
 		
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		Engajador engajador = (Engajador)session.getAttribute("Usuario");
-		post.setAutor(engajador);
+		String login = (String) session.getAttribute("login");
+		post.setAutor(login);
 		
 		daoEngajador.savePost(post);
 	}

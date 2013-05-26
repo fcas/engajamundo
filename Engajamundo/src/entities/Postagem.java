@@ -2,7 +2,9 @@ package entities;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 
@@ -10,21 +12,26 @@ import javax.persistence.Table;
 @Table(schema="engajamundoDB")  
 public class Postagem {
 
-	private Engajador autor;
-	private String titulo;
-	private String texto;
-	private ArrayList<String> tags;
+	@Id
+	@Column(name="login", length=20)
+	public String login;
+	@Column(name="titulo", length=20)
+	public String titulo;
+	@Column(name="texto", length=140)
+	public String texto;
+	@Column(name="tag", length=20)
+	public ArrayList<String> tags;
 	
 	public Postagem()
 	{
 		
 	}
 	
-	public Engajador getAutor() {
-		return autor;
+	public String getAutor() {
+		return login;
 	}
-	public void setAutor(Engajador autor) {
-		this.autor = autor;
+	public void setAutor(String login) {
+		this.login = login;
 	}
 	public String getTitulo() {
 		return titulo;
