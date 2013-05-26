@@ -1,5 +1,8 @@
 package controller;
 
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
+
 import entities.Engajador;
 import model.IServicoUsuario;
 import model.ServicoUsuario;
@@ -14,7 +17,8 @@ public class ControllerSession {
 	public String autenticar()
 	{
 		usuarioAtual = servicoUsuario.autenticar(login, senha);
-		
+		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);  
+		session.setAttribute("usuario", usuarioAtual);
 		System.out.println("usuario" + usuarioAtual.getLogin());
 		
 		if (usuarioAtual == null){
