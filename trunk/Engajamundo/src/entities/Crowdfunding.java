@@ -3,8 +3,8 @@ package entities;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Entity
-@Table(schema="engajamundoDB")  
+//@Entity
+//@Table(schema="engajamundoDB")  
 public class Crowdfunding {
 
 	Double metaCapacitacao;

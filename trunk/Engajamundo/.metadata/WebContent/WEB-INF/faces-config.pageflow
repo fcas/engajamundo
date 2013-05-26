@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13690483497430" configfile="/Engajamundo/WebContent/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="singup" x="204" y="24" id="pf13691473217758" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13694416442400 pf13694416442401" path="/singup.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="216" y="-125" id="pf136914732177511" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf136914732177512 pf136914732177513" path="/edicao.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="OperacaoFail" x="615" y="-16" id="pf136914732177516" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf136914732177513 pf13694416442401" path="/operacaoFail.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="OperacaoSucesso" x="600" y="-144" id="pf136914732177517" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf136914732177512 pf13694416442400" path="/operacaoSucesso.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="singup" x="122" y="562" id="pf13691473217758" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13694416442400 pf13694416442401" path="/singup.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="122" y="178" id="pf136914732177511" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf136914732177512 pf136914732177513" path="/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoFail" x="338" y="562" id="pf136914732177516" referenceLink="//@navigationRule.2/@navigationCase.2/@toViewId|" inlinks="pf136914732177513 pf13694416442401 pf13695949233257" path="/operacaoFail.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="OperacaoSucesso" x="338" y="178" id="pf136914732177517" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf136914732177512 pf13694416442400" path="/operacaoSucesso.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="autenticacao" x="122" y="946" id="pf13695927690842" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf13695927690843 pf13695927690844 pf13695949233257" path="/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home_engajador.xhtml" x="338" y="946" id="pf13695927690855" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf13695927690843" path="/home_engajador.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="home_admin.xhtml" x="338" y="1330" id="pf13695927690856" referenceLink="//@navigationRule.2/@navigationCase.1/@toViewId|" inlinks="pf13695927690844" path="/home_admin.xhtml"/>
   <links id="pf136914732177512" target="pf136914732177517" source="pf136914732177511" outcome="sucesso"/>
   <links id="pf136914732177513" target="pf136914732177516" source="pf136914732177511" outcome="erro"/>
   <links id="pf13694416442400" target="pf136914732177517" source="pf13691473217758" outcome="sucesso"/>
   <links id="pf13694416442401" target="pf136914732177516" source="pf13691473217758" outcome="erro"/>
+  <links id="pf13695927690843" target="pf13695927690855" source="pf13695927690842" outcome="engajador"/>
+  <links id="pf13695927690844" target="pf13695927690856" source="pf13695927690842" outcome="admin"/>
+  <links id="pf13695949233257" target="pf136914732177516" source="pf13695927690842" outcome="erro"/>
 </pageflow:Pageflow>

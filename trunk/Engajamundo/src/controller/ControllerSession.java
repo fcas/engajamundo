@@ -14,15 +14,23 @@ public class ControllerSession {
 	public String autenticar()
 	{
 		usuarioAtual = servicoUsuario.autenticar(login, senha);
-		if (usuarioAtual != null)
-			return "sucesso";
-		else
+		
+		System.out.println("usuario" + usuarioAtual.getLogin());
+		
+		if (usuarioAtual == null || usuarioAtual.getLogin().equalsIgnoreCase("")){
 			return "erro";
+		}
+		
+		if (usuarioAtual.getLogin().equalsIgnoreCase("admin")){
+			return "admin";
+		} else return "engajador";
+			
 	}
 	
 	public Engajador getUsuarioAtual() {
 		return usuarioAtual;
 	}
+	
 	public String getLogin() {
 		return login;
 	}

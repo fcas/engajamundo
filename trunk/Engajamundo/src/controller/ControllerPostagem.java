@@ -1,19 +1,20 @@
 package controller;
 
 import entities.Postagem;
+import exceptions.DaoException;
 import model.ServicoPostagem;
 
 public class ControllerPostagem {
 
 	ServicoPostagem servicoPostagem = ServicoPostagem
 			.getInstance();
-	private Postagem post;
-	private String tagAux;
+	public Postagem post;
+	public String tag;
 	
-	public String postar()
+	public String postar() throws DaoException
 	{
-		servicoPostagem.postar(post, tagAux);
-		return "";
+		servicoPostagem.postar(post, tag);
+		return 	"sucesso";
 	}
 	
 	public Postagem getPost() {
@@ -21,7 +22,7 @@ public class ControllerPostagem {
 	}
 
 	public String getTagAux() {
-		return tagAux;
+		return tag;
 	}
 
 	public void setPost(Postagem post) {
@@ -29,7 +30,7 @@ public class ControllerPostagem {
 	}
 
 	public void setTagAux(String tagAux) {
-		this.tagAux = tagAux;
+		this.tag = tagAux;
 	}
 	
 	public void salvarPostagem()
