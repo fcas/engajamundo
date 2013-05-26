@@ -17,7 +17,7 @@ public class ControllerSession {
 		
 		System.out.println("usuario" + usuarioAtual.getLogin());
 		
-		if (usuarioAtual == null || usuarioAtual.getLogin().equalsIgnoreCase("")){
+		if (usuarioAtual == null){
 			return "erro";
 		}
 		

@@ -81,15 +81,14 @@ public class DaoHibernate implements IDAOEngajador {
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
-
-		Query query = null;
-
-		query = em
+	
+		Query query = em
 				.createQuery("select f from Engajador f where login = :login and senha = :senha");
 		query.setParameter("login", login);
-
+		query.setParameter("senha", senha);
+	
 		return (Engajador) query.getSingleResult();
-
+		
 	}
 
 	@Override
