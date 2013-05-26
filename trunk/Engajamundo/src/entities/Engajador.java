@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="engajamundoDB")  
+@Table(name="Engajador", schema="engajamundoDB")  
 public class Engajador {
 	
 	@Column(name="nome", length=50)

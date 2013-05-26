@@ -72,8 +72,11 @@ public class DaoHibernate implements IDAOEngajador {
 
 	@Override
 	public void savePost(Postagem post) {
-		// TODO Auto-generated method stub
-		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(post);
+		em.getTransaction().commit();		
 	}
 
 	@Override

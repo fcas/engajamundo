@@ -37,7 +37,7 @@ public class ServicoPostagem {
 		
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
 		String login = (String) session.getAttribute("login");
-		post.setAutor(login);
+		post.setLogin(login);
 		
 		daoEngajador.savePost(post);
 	}
