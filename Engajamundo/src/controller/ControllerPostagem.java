@@ -1,9 +1,12 @@
 package controller;
 
+import javax.faces.bean.ManagedBean;
+
 import entities.Postagem;
 import exceptions.DaoException;
 import model.ServicoPostagem;
 
+@ManagedBean(name="controllerPostagem")
 public class ControllerPostagem {
 
 	ServicoPostagem servicoPostagem = ServicoPostagem
