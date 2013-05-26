@@ -25,12 +25,13 @@
    <a href = "crowdfunding_admin.xhtml">Patrocine!</a>
    <a href = "video_admin.xhtml">LiveStream</a>
    <a href = "about_admin.xhtml">Sobre</a>
+    <a href = "home.xhtml">Fazer Logoff</a>
    </div>
 </div>
 
 <div id="content">
 <div id="guia">
-	<h1>Bem vindo!</h1>
+	<h:outputLabel value="Bem vindo, #{sessionScope.usuario.nome}"></h:outputLabel>
 </div>
 
 </div>
