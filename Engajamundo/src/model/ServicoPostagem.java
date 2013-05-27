@@ -2,12 +2,14 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import dao.DaoHibernate;
 import dao.IDAOEngajador;
+import entities.Engajador;
 import entities.Postagem;
 
 public class ServicoPostagem {
@@ -30,13 +32,16 @@ public class ServicoPostagem {
 
 	}
 	
+	public List<Postagem> getPostagens(){
+		return daoEngajador.listarPostagens();
+	}
+	
 	public void postar(Postagem post, String tagAux)
 	{
-		String[] tags = tagAux.trim().split(";");
-		post.setTags((ArrayList<String>)Arrays.asList(tags));
+		post.setTags(tagAux);
 		
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		String login = (String) session.getAttribute("login");
+		String login = ((Engajador) session.getAttribute("usuario")).getLogin();
 		post.setLogin(login);
 		
 		daoEngajador.savePost(post);

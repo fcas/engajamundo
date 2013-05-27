@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import exceptions.DaoException;
 
@@ -132,5 +133,11 @@ public class DaoEmMemoria implements IDAOEngajador {
 	public boolean deletar(String login) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Postagem> listarPostagens() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

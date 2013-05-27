@@ -127,4 +127,17 @@ public class DaoHibernate implements IDAOEngajador {
 
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Postagem> listarPostagens() {  
+	    
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		String query = "select p from Postagem p";
+
+		return em.createQuery(query).getResultList();
+	}
+
 }

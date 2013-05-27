@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 
 import entities.Postagem;
@@ -11,25 +13,35 @@ public class ControllerPostagem {
 
 	ServicoPostagem servicoPostagem = ServicoPostagem
 			.getInstance();
-	public Postagem post;
-	public String tag;
+	private Postagem postagem;
+	private String tag;
+	private List<Postagem> postagens;
 	
 	public String postar() throws DaoException
 	{
-		servicoPostagem.postar(post, tag);
+		servicoPostagem.postar(postagem, tag);
+
+		postagens = servicoPostagem.getPostagens();
 		return 	"sucesso";
 	}
 	
-	public Postagem getPost() {
-		return post;
+	public ControllerPostagem(){
+		postagem = new Postagem();
+		postagens = servicoPostagem.getPostagens();
+		for(int i = 0; i < postagens.size(); i++){
+			System.out.println(postagens.get(i).getTitulo());
+		}
+	}
+	public Postagem getPostagem() {
+		return postagem;
 	}
 
 	public String getTagAux() {
 		return tag;
 	}
 
-	public void setPost(Postagem post) {
-		this.post = post;
+	public void setPost(Postagem postagem) {
+		this.postagem = postagem;
 	}
 
 	public void setTagAux(String tagAux) {
@@ -41,5 +53,12 @@ public class ControllerPostagem {
 		
 	}
 	
-	
+	public List<Postagem> getPostagens() {
+		return postagens;
+	}
+
+	public void setPostagens(List<Postagem> postagens) {
+		this.postagens = postagens;
+	}
+
 }
