@@ -60,7 +60,32 @@
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>buscas</display-name>
+		<from-view-id>/buscas_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>BuscarPorNome</from-outcome>
+			<to-view-id>/buscaPorNome_admin.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>BuscarPorPais</from-outcome>
+			<to-view-id>/buscaPorPais_admin.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
+	<navigation-rule>
+		<display-name>buscas</display-name>
+		<from-view-id>/buscas_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>BuscarPorNome</from-outcome>
+			<to-view-id>/buscaPorNome_engajador.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>BuscarPorPais</from-outcome>
+			<to-view-id>/buscaPorPais.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
 
 
