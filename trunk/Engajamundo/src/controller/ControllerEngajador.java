@@ -40,6 +40,19 @@ public class ControllerEngajador {
 		iniciarDel(usuarios.size());
 		return "Editar";
 	}
+	
+	public String buscarPorPais()
+    {
+            buscou = false;
+            query = "";
+            return "BuscarPorPais";
+    }
+    
+    public String buscarPorNome() {
+            buscou = false;
+            query = "";
+            return "BuscarPorNome";
+    }
 
 	public String cadastrarEngajador() {
 
