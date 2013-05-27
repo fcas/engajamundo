@@ -71,7 +71,6 @@ body {
 	margin-top:100px;
 }
 
-
 #contentboxtop {
 	background:url(../imagens/boxtop.png) center no-repeat;
 	font-size: 45px;
@@ -85,6 +84,17 @@ body {
 	background:url(../imagens/boxcontent.png) repeat;
 	padding:50px 100px 50px 100px;
 	margin-bottom:100px;
+	text-align:center;
+}
+
+#contentboxcontent h1 {
+	color:#002244;
+	font-size:30px;
+}
+
+#contentboxcontent a {
+	color:#002244;
+	font-size:15px;
 }
 
 #footer {

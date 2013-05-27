@@ -9,6 +9,7 @@ import javax.persistence.Query;
 
 import entities.Engajador;
 import entities.Postagem;
+import exceptions.BuscaSemResultadoException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
 
@@ -42,8 +43,8 @@ public class DaoHibernate implements IDAOEngajador {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Engajador> buscarEngajador(String nome)
-			throws DaoException {
+	public List<Engajador> buscarEngajador (String nome)
+			throws DaoException, BuscaSemResultadoException {
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -52,6 +53,8 @@ public class DaoHibernate implements IDAOEngajador {
 		Query query = em.createQuery("select f from Engajador f where nome = :nome");
 		query.setParameter("nome", nome);
  
+		if (query.getResultList().size() == 0)
+			throw new BuscaSemResultadoException();
         return query.getResultList();
 
 	}
@@ -65,14 +68,15 @@ public class DaoHibernate implements IDAOEngajador {
 		Query query = em.createQuery("select f from Engajador f where login = :login");
 		query.setParameter("login", login);
  
-        return (Engajador) query.getResultList();
+		
+        return (Engajador) query.getResultList().get(0);
 
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Engajador> buscarEngajadorPorPais(String pais)
-			throws DaoException {
+			throws DaoException, BuscaSemResultadoException {
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -81,6 +85,9 @@ public class DaoHibernate implements IDAOEngajador {
 		Query query = em.createQuery("select f from Engajador f where pais = :pais");
 		query.setParameter("pais", pais);
  
+		if (query.getResultList().size() == 0)
+			throw new BuscaSemResultadoException();
+		
         return query.getResultList();
 	}
 
@@ -160,8 +167,6 @@ public class DaoHibernate implements IDAOEngajador {
 
 	@Override
 	public void editar(Engajador engajador, String login) {
-		
-		System.out.println("oiiiiiiiiiiiiiiiiiiiiiiiii");
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
