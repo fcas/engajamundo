@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<faces-config
-    xmlns="http://java.sun.com/xml/ns/javaee"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
-    version="2.1">
-    
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+
 	<managed-bean>
 		<managed-bean-name>controllerPostagem</managed-bean-name>
 		<managed-bean-class>controller.ControllerPostagem</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<managed-bean>
 		<managed-bean-name>controllerSession</managed-bean-name>
 		<managed-bean-class>controller.ControllerSession</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	
+
 	<navigation-rule>
 		<display-name>singup</display-name>
 		<from-view-id>/singup.xhtml</from-view-id>
@@ -30,7 +29,7 @@
 			<to-view-id>/operacaoFail.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>Edicao</display-name>
 		<from-view-id>/edicao.xhtml</from-view-id>
@@ -42,9 +41,13 @@
 			<from-outcome>erro</from-outcome>
 			<to-view-id>/operacaoFail.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
-	
-		<navigation-rule>
+
+	<navigation-rule>
 		<display-name>autenticacao</display-name>
 		<from-view-id>/home.xhtml</from-view-id>
 		<navigation-case>
@@ -60,7 +63,7 @@
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	
+
 	<navigation-rule>
 		<display-name>buscas</display-name>
 		<from-view-id>/buscas_admin.xhtml</from-view-id>
@@ -71,6 +74,10 @@
 		<navigation-case>
 			<from-outcome>BuscarPorPais</from-outcome>
 			<to-view-id>/buscaPorPais_admin.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -85,7 +92,147 @@
 			<from-outcome>BuscarPorPais</from-outcome>
 			<to-view-id>/buscaPorPais.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
+	
+		<navigation-rule>
+		<display-name>buscaPorNome</display-name>
+		<from-view-id>/buscaPorNome_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>buscaPorNome</display-name>
+		<from-view-id>/buscaPorNome_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>buscaPorPais</display-name>
+		<from-view-id>/buscaPorPais_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<display-name>buscaPorPais</display-name>
+		<from-view-id>/buscaPorPais_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>about</display-name>
+		<from-view-id>/about_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>about</display-name>
+		<from-view-id>/about_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>postagem</display-name>
+		<from-view-id>/criarPostagem_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>postagem</display-name>
+		<from-view-id>/criarPostagem.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>crowdfunding</display-name>
+		<from-view-id>/crowdfunding_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>crowdfunding</display-name>
+		<from-view-id>/crowdfunding.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>home</display-name>
+		<from-view-id>/home_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>home</display-name>
+		<from-view-id>/home_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>video</display-name>
+		<from-view-id>/video_engajador.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>video</display-name>
+		<from-view-id>/video_admin.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<display-name>visualizacao</display-name>
+		<from-view-id>/visualizacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>logoff</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
 </faces-config>
 
 

@@ -41,16 +41,10 @@ public class ControllerSession {
 	
 	public String logoff (){
 		
-		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);	
+		session.removeAttribute("usuario");
 		
-		String atributo; 
-		
-		while(session.getAttributeNames().hasMoreElements()){
-			atributo = session.getAttributeNames().nextElement();
-			session.removeAttribute(atributo);
-		}
-		
-		return "login?faces-redirect=true";
+		return "logoff";
 		
 	}
 	
