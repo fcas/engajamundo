@@ -32,9 +32,9 @@ public class ControllerSession {
 			return "admin";
 		} else return "engajador";
 		}catch(LoginInvalidoException e){
-			FacesMessage message = new FacesMessage("Senha inválido");  
+			FacesMessage message = new FacesMessage("Senha incorreta");  
             message.setSeverity(FacesMessage.SEVERITY_ERROR);  
-            FacesContext.getCurrentInstance().addMessage("password", message);  
+            FacesContext.getCurrentInstance().addMessage("home:password", message);  
 			return "erro";
 		}
 	}
