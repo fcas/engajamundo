@@ -140,4 +140,17 @@ public class DaoEmMemoria implements IDAOEngajador {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public Engajador buscarPorLogin(String login) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void editar(Engajador engajador, String login) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

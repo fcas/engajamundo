@@ -15,30 +15,44 @@ public class ControllerEngajador {
 
 	private Engajador engajador;
 	private List<Engajador> usuarios;
-	private ArrayList<Boolean> del;
+	private List<Engajador> usuarioSelecionados;
+	private ArrayList<Boolean> selecionados;
 	private boolean buscou = false;
 	private String query;
 	IServicoUsuario servicoUsuario = ServicoUsuario
 			.getInstance();
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public void iniciarDel(int tam)
+	public void selecionados(int tam)
 	{
-		del = new ArrayList();
+		selecionados = new ArrayList();
 		for (int i = 0; i < tam; i++)
-			del.add(false);
+			selecionados.add(false);
 	}
 	
 	@SuppressWarnings({ })
 	public ControllerEngajador() {
 		engajador = new Engajador();
 		usuarios = servicoUsuario.getUsers();
+		usuarioSelecionados = new ArrayList<Engajador>();
 	}
 	
 	public String editar(){
-		usuarios = (ArrayList<Engajador>) servicoUsuario.getUsers();
-		iniciarDel(usuarios.size());
-		return "Editar";
+		
+		try {
+			for (int i = 0; i < usuarios.size(); i++)
+			{
+				if (usuarios.get(i).isSelecionado())
+					usuarioSelecionados.add((usuarios.get(i)));
+			}  
+			
+			return "Editar";
+		}
+		catch (Exception e)
+		{
+			return "erro";
+		}
+		
 	}
 	
 	public String buscarPorPais()
@@ -93,13 +107,22 @@ public class ControllerEngajador {
 	public String visualizar()
 	{
 		usuarios = (List<Engajador>) servicoUsuario.getUsers();
-		iniciarDel(usuarios.size());
+		selecionados(usuarios.size());
 		return "Visualizar";
 	}
 	
 	public String atualizar()
 	{
-//		servicoUsuario.saveUsers(usuarios);
+		String login;
+		
+		System.out.println(usuarioSelecionados.size());
+		
+		for (int i = 0; i < usuarioSelecionados.size(); i++) {
+			login = usuarioSelecionados.get(i).getLogin();
+			System.out.println("editando....chamando servicos...");
+			servicoUsuario.editar(usuarioSelecionados.get(i), login);
+		}
+	
 		return "sucesso";
 	}
 	
@@ -109,7 +132,7 @@ public class ControllerEngajador {
 		String action = "";
 		try {
 			usuarios = servicoUsuario.buscarEngajador(query);
-			iniciarDel(usuarios.size());
+			selecionados(usuarios.size());
 			buscou = true;
 		} catch (DaoException e) {
 			// TODO Auto-generated catch block
@@ -123,7 +146,7 @@ public class ControllerEngajador {
 		String action = "";
 		try {
 			usuarios = servicoUsuario.buscarEngajadorPorPais(query);
-			iniciarDel(usuarios.size());
+			selecionados(usuarios.size());
 			buscou = true;
 		} catch (DaoException e) {
 			// TODO Auto-generated catch block
@@ -166,6 +189,14 @@ public class ControllerEngajador {
 
 	public void setQuery(String query) {
 		this.query = query;
+	}
+
+	public List<Engajador> getUsuarioSelecionados() {
+		return usuarioSelecionados;
+	}
+
+	public void setUsuarioSelecionados(List<Engajador> usuarioSelecionados) {
+		this.usuarioSelecionados = usuarioSelecionados;
 	}
 
 }
