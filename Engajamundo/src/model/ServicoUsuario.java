@@ -6,6 +6,7 @@ import dao.DaoHibernate;
 import dao.IDAOEngajador;
 import entities.Engajador;
 import exceptions.DaoException;
+import exceptions.LoginInvalidoException;
 
 public class ServicoUsuario implements IServicoUsuario {
 
@@ -52,7 +53,7 @@ public class ServicoUsuario implements IServicoUsuario {
 	}
 
 	@Override
-	public Engajador autenticar(String login, String senha)
+	public Engajador autenticar(String login, String senha) throws LoginInvalidoException
 	{
 		return daoEngajador.autenticar(login, senha);
 	}

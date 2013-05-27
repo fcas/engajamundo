@@ -30,6 +30,16 @@
 </div>
 
 	<f:view>
+				<h:panelGroup>
+			<c:forEach items="#{controllerPostagem.postagens}" var="postagem">		
+					<h:outputLabel value="Postado por: #{postagem.login}"/><br/>
+					<h:outputLabel value="Assunto: #{postagem.titulo}"/><br/>
+					<h:outputLabel value="Conteúdo: #{postagem.texto}"/><br/>
+					<h:outputLabel value="Tags: #{postagem.tags}"/><br/>	
+			</c:forEach>
+			
+			</h:panelGroup>
+	
 		<h1> Criar Postagem </h1>
 		<h:form>
 			<p>Título: </p><h:inputText value="#{controllerPostagem.postagem.titulo}"></h:inputText>
