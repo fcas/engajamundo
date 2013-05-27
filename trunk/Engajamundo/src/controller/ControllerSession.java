@@ -1,9 +1,12 @@
 package controller;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+
 import entities.Engajador;
+import exceptions.LoginInvalidoException;
 import model.IServicoUsuario;
 import model.ServicoUsuario;
 
@@ -16,6 +19,7 @@ public class ControllerSession {
 	
 	public String autenticar()
 	{
+		try{
 		usuarioAtual = servicoUsuario.autenticar(login, senha);
 		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);  
 		session.setAttribute("usuario", usuarioAtual);
@@ -27,7 +31,12 @@ public class ControllerSession {
 		if (usuarioAtual.getLogin().equals("admin")){
 			return "admin";
 		} else return "engajador";
-			
+		}catch(LoginInvalidoException e){
+			FacesMessage message = new FacesMessage("Senha inválido");  
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);  
+            FacesContext.getCurrentInstance().addMessage("password", message);  
+			return "erro";
+		}
 	}
 	
 	public String logoff (){

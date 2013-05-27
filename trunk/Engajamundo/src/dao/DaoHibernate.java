@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import entities.Engajador;
 import entities.Postagem;
 import exceptions.DaoException;
+import exceptions.LoginInvalidoException;
 
 public class DaoHibernate implements IDAOEngajador {
 	
@@ -80,7 +81,8 @@ public class DaoHibernate implements IDAOEngajador {
 	}
 
 	@Override
-	public Engajador autenticar(String login, String senha) {
+	public Engajador autenticar(String login, String senha) throws LoginInvalidoException{
+		try{
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
@@ -91,7 +93,9 @@ public class DaoHibernate implements IDAOEngajador {
 		query.setParameter("senha", senha);
 	
 		return (Engajador) query.getSingleResult();
-		
+		}catch(Exception e){
+			throw new LoginInvalidoException();
+		}
 	}
 
 	@Override
@@ -131,6 +135,8 @@ public class DaoHibernate implements IDAOEngajador {
 	@Override
 	public List<Postagem> listarPostagens() {  
 	    
+		
+		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
