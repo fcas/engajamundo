@@ -32,9 +32,9 @@
 	<f:view>
 		<h1> Criar Postagem </h1>
 		<h:form>
-			<p>Título: </p><h:inputText value="#{controllerPostagem.post.titulo}"></h:inputText>
-			<p>Texto: </p><h:inputTextarea  value="#{controllerPostagem.post.texto}" style="height: 119px; width: 384px; "></h:inputTextarea>
-			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.post.tags}" style="width: 384px; "></h:inputText><br></br><br></br>
+			<p>Título: </p><h:inputText value="#{controllerPostagem.postagem.titulo}"></h:inputText>
+			<p>Texto: </p><h:inputTextarea  value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "></h:inputTextarea>
+			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.postagem.tags}" style="width: 384px; "></h:inputText><br></br><br></br>
 			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
 		</h:form>
 

@@ -23,4 +23,6 @@ public interface IDAOEngajador {
 	boolean existeLogin(String login);
 	
 	boolean deletar(String login);
+
+	List<Postagem> listarPostagens();
 }

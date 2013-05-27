@@ -1,6 +1,5 @@
 package entities;
 
-import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,20 +13,20 @@ public class Postagem {
 
 	@Id
 	@Column(name="login", length=20)
-	public String login;
+	private String login;
 	@Column(name="titulo", length=20)
-	public String titulo;
+	private String titulo;
 	@Column(name="texto", length=140)
-	public String texto;
+	private String texto;
 	@Column(name="tag", length=50)
-	public ArrayList<String> tags;
+	private String tags;
 	
 	public Postagem()
 	{
 		
 	}
 	
-	public Postagem(String titulo, String texto, ArrayList<String> tags, String login){ 
+	public Postagem(String titulo, String texto, String tags, String login){ 
 		this.titulo = titulo; 
 		this.texto = texto; 
 		this.tags = tags; 
@@ -59,14 +58,11 @@ public class Postagem {
 		this.texto = texto;
 	}
 
-	public ArrayList<String> getTags() {
+	public String getTags() {
 		return tags;
 	}
 
-	public void setTags(ArrayList<String> tags) {
+	public void setTags(String tags) {
 		this.tags = tags;
 	}
-	
-	
-	
 }
