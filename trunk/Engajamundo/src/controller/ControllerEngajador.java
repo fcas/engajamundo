@@ -77,7 +77,10 @@ public class ControllerEngajador {
 			{
 				if (usuarios.get(i).isSelecionado())
 					servicoUsuario.deletar(usuarios.get(i).getLogin());
-			}
+			} 
+			
+			usuarios = (List<Engajador>) servicoUsuario.getUsers();
+			
 			return "sucesso";
 		}
 		catch (Exception e)
