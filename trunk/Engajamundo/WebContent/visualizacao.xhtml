@@ -25,7 +25,7 @@
    <a href = "crowdfunding_admin.xhtml">Patrocine!</a>
    <a href = "video_admin.xhtml">LiveStream</a>
    <a href = "about_admin.xhtml">Sobre</a>
-   <a href = "home.xhtml">Fazer Logoff</a>
+   <h:form><h:commandLink value="Fazer Logoff" target="home.xhtml" action="#{controllerSession.logoff}"></h:commandLink></h:form>
    </div>
 </div>
 <f:view>
