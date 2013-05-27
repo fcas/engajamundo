@@ -26,4 +26,8 @@ public interface IDAOEngajador {
 	boolean deletar(String login);
 
 	List<Postagem> listarPostagens();
+	
+	Engajador buscarPorLogin(String login);
+
+	void editar(Engajador engajador, String login);
 }

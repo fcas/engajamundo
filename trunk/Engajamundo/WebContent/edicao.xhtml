@@ -41,13 +41,15 @@
 					<th>Nome</th>
 					<th>Sobrenome</th>
 					<th>Email</th>
+					<th>Login</th>
 				</tr>
-				<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
+				<c:forEach items="#{controllerEngajador.usuarioSelecionados}" var="usuario">
 					<tr>
 						<td><h:selectBooleanCheckbox value="#{usuario.selecionado}" /></td>
 						<td><h:inputText value="#{usuario.nome}"></h:inputText></td>
 						<td><h:inputText value="#{usuario.sobrenome}"></h:inputText></td>
 						<td><h:inputText value="#{usuario.email}"></h:inputText></td>
+					    <td><h:inputText value="#{usuario.login}"></h:inputText></td>
 					</tr>
 				</c:forEach>
 			</table>

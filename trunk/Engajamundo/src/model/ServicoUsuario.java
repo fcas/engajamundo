@@ -61,4 +61,15 @@ public class ServicoUsuario implements IServicoUsuario {
 	public boolean deletar(String login) {
 		return daoEngajador.deletar(login);
 	}
+
+	@Override
+	public Engajador buscarPorLogin(String login) {
+		return daoEngajador.buscarPorLogin(login);
+	}
+
+	@Override
+	public void editar(Engajador engajador, String login) {
+		this.daoEngajador.editar(engajador, login);
+		
+	}
 }

@@ -55,6 +55,19 @@ public class DaoHibernate implements IDAOEngajador {
         return query.getResultList();
 
 	}
+	
+	public Engajador buscarPorLogin(String login) {
+		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em.createQuery("select f from Engajador f where login = :login");
+		query.setParameter("login", login);
+ 
+        return (Engajador) query.getResultList();
+
+	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -136,8 +149,6 @@ public class DaoHibernate implements IDAOEngajador {
 	@Override
 	public List<Postagem> listarPostagens() {  
 	    
-		
-		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
@@ -145,6 +156,28 @@ public class DaoHibernate implements IDAOEngajador {
 		String query = "select p from Postagem p";
 
 		return em.createQuery(query).getResultList();
+	}
+
+	@Override
+	public void editar(Engajador engajador, String login) {
+		
+		System.out.println("oiiiiiiiiiiiiiiiiiiiiiiiii");
+		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+		em.getTransaction().begin();
+
+		Engajador engajador_old = buscarPorLogin(login);
+		engajador_old.setNome(engajador.getNome());
+		engajador_old.setSobrenome((engajador.getSobrenome()));
+		engajador_old.setEmail(engajador.getEmail());
+		
+		System.out.println("nomeeeeeee" + engajador_old.getNome());
+		
+		em.merge(engajador_old);
+		em.getTransaction().commit();
+
 	}
 
 }
