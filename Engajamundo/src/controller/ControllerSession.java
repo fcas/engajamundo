@@ -19,16 +19,30 @@ public class ControllerSession {
 		usuarioAtual = servicoUsuario.autenticar(login, senha);
 		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);  
 		session.setAttribute("usuario", usuarioAtual);
-		System.out.println("usuario" + usuarioAtual.getLogin());
 		
 		if (usuarioAtual == null){
 			return "erro";
 		}
 		
-		if (usuarioAtual.getLogin().equalsIgnoreCase("admin")){
+		if (usuarioAtual.getLogin().equals("admin")){
 			return "admin";
 		} else return "engajador";
 			
+	}
+	
+	public String logoff (){
+		
+		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
+		
+		String atributo; 
+		
+		while(session.getAttributeNames().hasMoreElements()){
+			atributo = session.getAttributeNames().nextElement();
+			session.removeAttribute(atributo);
+		}
+		
+		return "login?faces-redirect=true";
+		
 	}
 	
 	public Engajador getUsuarioAtual() {
