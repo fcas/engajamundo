@@ -3,11 +3,13 @@ package controller;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 
 import entities.Postagem;
 import exceptions.DaoException;
 import model.ServicoPostagem;
 
+@SessionScoped
 @ManagedBean(name="controllerPostagem")
 public class ControllerPostagem {
 

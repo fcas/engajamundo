@@ -19,14 +19,19 @@
    <object id="like" type="text/html" data="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/engajamundo?fref=ts" border="0" align="left" style="border:none; width:400px; padding-left:120px;position:relative;height:60px;"></object>
    
    <div id="listamenu">
-   <a href = "home_engajador.xhtml">Inicio</a>
-   <a href = "criarPostagem.xhtml">Criar Postagem</a>
-   <a href = "buscas_engajador.xhtml">Buscas</a>
-   <a href = "crowdfunding.xhtml">Patrocine!</a>
-   <a href = "video_engajador.xhtml">LiveStream</a>
-   <a href = "about_engajador.xhtml">Sobre</a>
-<h:form><h:commandLink action="#{controllerSession.logoff}"
-					value="Fazer logoff"></h:commandLink></h:form>
+   <!-- opcoes visiveis a todos -->
+   <a href = "home_admin.xhtml">Inicio</a>
+   <a href = "about_admin.xhtml">Sobre</a>
+   <a href = "crowdfunding_admin.xhtml">Patrocine!</a>
+   <a href = "video_admin.xhtml">LiveStream</a>
+   <br/>
+   <!-- apenas usuarios e admins -->
+<h:form>
+	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+	<h:commandLink href = "criarPostagem_admin.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+	<h:commandLink href = "buscas_admin.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
 

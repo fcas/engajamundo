@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import entities.Engajador;
+import exceptions.BuscaSemResultadoException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
 
@@ -13,11 +14,11 @@ public interface IServicoUsuario {
 
 	List<Engajador> getUsers();
 
-	List<Engajador> buscarEngajador(String engajador) throws DaoException;
+	List<Engajador> buscarEngajador(String engajador) throws DaoException, BuscaSemResultadoException;
 
-	List<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException;
+	List<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException, BuscaSemResultadoException;
 	
-	Engajador buscarPorLogin(String login);
+	Engajador buscarPorLogin(String login) throws BuscaSemResultadoException;
 
 	Engajador autenticar(String login, String senha) throws LoginInvalidoException;
 	

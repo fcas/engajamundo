@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import exceptions.BuscaSemResultadoException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
 import entities.Engajador;
@@ -13,9 +14,9 @@ public interface IDAOEngajador {
 
 	List<Engajador> getUsers();
 
-	List<Engajador> buscarEngajador(String query) throws DaoException;
+	List<Engajador> buscarEngajador(String query) throws DaoException, BuscaSemResultadoException;
 
-	List<Engajador> buscarEngajadorPorPais(String query) throws DaoException;
+	List<Engajador> buscarEngajadorPorPais(String query) throws DaoException, BuscaSemResultadoException;
 	
 	void savePost(Postagem post);
 

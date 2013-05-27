@@ -19,23 +19,35 @@
    <object id="like" type="text/html" data="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/engajamundo?fref=ts" border="0" align="left" style="border:none; width:400px; padding-left:120px;position:relative;height:60px;"></object>
    
    <div id="listamenu">
+   <!-- opcoes visiveis a todos -->
    <a href = "home_admin.xhtml">Inicio</a>
-   <a href = "visualizacao.xhtml">Usuários</a>
-   <a href = "criarPostagem_admin.xhtml">Criar Postagem</a>
-   <a href = "buscas_admin.xhtml">Buscas</a>
+   <a href = "about_admin.xhtml">Sobre</a>
    <a href = "crowdfunding_admin.xhtml">Patrocine!</a>
    <a href = "video_admin.xhtml">LiveStream</a>
-   <a href = "about_admin.xhtml">Sobre</a>
-   <h:form><h:commandLink action="#{controllerSession.logoff}"
-					value="Fazer logoff"></h:commandLink></h:form>
+   <br/>
+   <!-- apenas usuarios e admins -->
+<h:form>
+	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+	<h:commandLink href = "criarPostagem_admin.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+	<h:commandLink href = "buscas_admin.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
 
 	<f:view>
-		<h1> Busca por Nome </h1>
-		   <a href="buscas_admin.xhtml"><img id="botao" src="imagens/back.png" border="0" align="right"/></a>
-			<h:form>
-			<h:panelGrid columns="3">
+	<div id="content">
+	
+		<div id="contentbox">
+			<a href="buscas.xhtml"><img id="botao" src="imagens/back.png" border="0" align="right"/></a>
+		<div id="contentboxtop">
+			<p>Busca por Nome</p>
+		</div>
+
+	<div id="contentboxcontent">
+		
+		   <h:form id="busca">
+			<h:panelGroup columns="3" >
 				<h:outputLabel value="Nome: " for="nome" />
 				<h:inputText label="Nome" id="nome" required="true"
 					value="#{controllerEngajador.query}">
@@ -44,12 +56,13 @@
 				<h:message for="nome" errorStyle="color:red; display:block" />
 				<h:commandButton action="#{controllerEngajador.buscarEngajadorPorNome}"
 					value="Buscar"></h:commandButton>
-			</h:panelGrid>
-		</h:form>
-			
+			</h:panelGroup>
+			</h:form>
+			<br/>
 		<h:panelGroup rendered="#{controllerEngajador.buscou==true}">
+			<h1>____________________________________________</h1><br/>
 		<h:form>
-			<table border="0" cellspacing="0" cellpadding="10">
+			<table align="center" border="0" cellspacing="0" cellpadding="10">
 				<tr><th></th><th>Nome</th><th>Sobrenome</th><th>Email</th></tr>
 				<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
 					<tr>
@@ -60,10 +73,14 @@
 					</tr>
 				</c:forEach>
 			</table>
+			<br/>
 			<h:commandButton action="#{controllerEngajador.deletar}"
 					value="Deletar itens selecionados"></h:commandButton>
 		</h:form>
 	</h:panelGroup>
+	</div>
+	</div>
+	</div>
 	</f:view>
 	
 	</div>
