@@ -7,10 +7,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import model.ServicoPostagem;
 import entities.Postagem;
 import exceptions.DaoException;
 import exceptions.UsuarioNaoAutenticadoException;
+import model.ServicoPostagem;
 
 @SessionScoped
 @ManagedBean(name="controllerPostagem")
@@ -24,8 +24,10 @@ public class ControllerPostagem {
 	
 	public String postar() throws DaoException
 	{
+
 		try {
 			servicoPostagem.postar(postagem, tag);
+			postagens = servicoPostagem.getPostagens();
 			return "sucesso";
 		} catch (UsuarioNaoAutenticadoException e) {
 			FacesMessage message = new FacesMessage("Login necessário");  
@@ -33,7 +35,6 @@ public class ControllerPostagem {
             FacesContext.getCurrentInstance().addMessage("home:password", message);
 		}
 
-		postagens = servicoPostagem.getPostagens();
 		return 	"erro";
 	}
 	

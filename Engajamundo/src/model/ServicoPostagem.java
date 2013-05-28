@@ -11,7 +11,7 @@ import entities.Engajador;
 import entities.Postagem;
 import exceptions.UsuarioNaoAutenticadoException;
 
-public class ServicoPostagem implements IServicoPostagem {
+public class ServicoPostagem {
 
 	private static ServicoPostagem singleton = null;
 
@@ -36,19 +36,19 @@ public class ServicoPostagem implements IServicoPostagem {
 	}
 	
 	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException
-	{
-		post.setTags(tagAux);
-		
-		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		
-		String login = null;
-		
-		if (session.getAttribute("usuario")!=null){
-			login = ((Engajador) session.getAttribute("usuario")).getLogin();
-		} else throw new UsuarioNaoAutenticadoException(); 
-		
-		post.setLogin(login);
-		
-		daoEngajador.savePost(post);
-	}
+    {
+            post.setTags(tagAux);
+            
+            HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
+            
+            String login = null;
+            
+            if (session.getAttribute("usuario")!=null){
+                    login = ((Engajador) session.getAttribute("usuario")).getLogin();
+            } else throw new UsuarioNaoAutenticadoException(); 
+            
+            post.setLogin(login);
+            
+            daoEngajador.savePost(post);
+    }
 }
