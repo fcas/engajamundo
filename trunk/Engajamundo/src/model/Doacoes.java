@@ -1,11 +1,22 @@
 package model;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@SessionScoped
+@ManagedBean(name="doacao")
 public class Doacoes {
 	
-	public Double metaCapacitacao = 2.000;
+	ServicoCrowdfunding servicoCrowdfunding = ServicoCrowdfunding
+			.getInstance();
+	public Double metaCapacitacao;
 	public Double valorCapitado;
 	public Double porcentagem;
 	int qtdPatrocinadores;
+	
+	public Doacoes(){
+		this.metaCapacitacao = 200.000;
+	}
 	
 	public Double getMetaCapacitacao() {
 		return metaCapacitacao;
@@ -14,13 +25,13 @@ public class Doacoes {
 		this.metaCapacitacao = metaCapacitacao;
 	}
 	public Double getValorCapitado() {
-		return valorCapitado;
+		return servicoCrowdfunding.getDoacoes();
 	}
 	public void setValorCapitado(Double valorCapitado) {
 		this.valorCapitado = valorCapitado;
 	}
 	public Double getPorcentagem() {
-		return porcentagem;
+		return (getValorCapitado()/metaCapacitacao)*100;
 	}
 	public void setPorcentagem(Double porcentagem) {
 		this.porcentagem = porcentagem;

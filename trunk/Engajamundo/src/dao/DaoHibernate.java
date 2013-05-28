@@ -179,8 +179,6 @@ public class DaoHibernate implements IDAOEngajador {
 		engajador_old.setSobrenome((engajador.getSobrenome()));
 		engajador_old.setEmail(engajador.getEmail());
 		
-		System.out.println("nomeeeeeee" + engajador_old.getNome());
-		
 		em.merge(engajador_old);
 		em.getTransaction().commit();
 
@@ -196,9 +194,15 @@ public class DaoHibernate implements IDAOEngajador {
 	}
 
 	@Override
-	public List<Crowdfunding> getDoacoes() {
-		// TODO Auto-generated method stub
-		return null;
+	public Double getDoacoes() {
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		String query = "select SUM(d.valor) from Crowdfunding d";
+		
+		return (Double) em.createQuery(query).getSingleResult();
+		
 	}
 
 }

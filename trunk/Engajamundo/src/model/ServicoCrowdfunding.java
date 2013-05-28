@@ -1,7 +1,5 @@
 package model;
 
-import java.util.List;
-
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
@@ -30,7 +28,7 @@ public class ServicoCrowdfunding {
 
 	}
 	
-	public List<Crowdfunding> getDoacoes(){
+	public Double getDoacoes(){
 		return daoEngajador.getDoacoes();
 	}
 	
