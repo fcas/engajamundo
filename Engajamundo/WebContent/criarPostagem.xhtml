@@ -34,28 +34,37 @@
 					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
+	<div id="content">
+
+<div id="contentbox">
+	<a href="home.xhtml"><img id="botao" src="imagens/back.png" border="0" align="right"/></a>
+	<div id="contentboxtop">
+		<p>Postagens</p>
+	</div>
+
 	<f:view>
-			<h:panelGroup>
+				<h:panelGroup>
 			<c:forEach items="#{controllerPostagem.postagens}" var="postagem">		
-					<h:outputLabel value="Postado por: #{postagem.login}"/><br/>
-					<h:outputLabel value="Assunto: #{postagem.titulo}"/><br/>
-					<h:outputLabel value="Conteúdo: #{postagem.texto}"/><br/>
-					<h:outputLabel value="Tags: #{postagem.tags}"/><br/>	
+					<div id="contentboxcontent">
+						<h1><h:outputLabel value="#{postagem.titulo}"/></h1>
+						<h:outputLabel value="#{postagem.texto}"/><br/><br/>
+						<a>Postado por: </a><h:outputText value="#{postagem.login}"/><br/>
+						<a>Tags: </a><h:outputText value="#{postagem.tags}"/><br/>
+					</div>
 			</c:forEach>
 			
 			</h:panelGroup>
-
 		<h1> Criar Postagem </h1>
+		<div id="contentboxcontent">
 		<h:form>
-
-		
-			<p>Título: </p><h:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></h:inputText><h:message for="titulo" errorStyle="color:red; display:block" />
-			<p>Texto: </p><h:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </h:inputTextarea><h:message for="texto" errorStyle="color:red; display:block" />
-			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.tagAux}" style="width: 384px; "></h:inputText><br></br><br></br>
+			 <p>Título: </p><h:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></h:inputText><h:message for="titulo" errorStyle="color:red; display:block" />
+			  <p>Texto: </p><h:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </h:inputTextarea><h:message for="texto" errorStyle="color:red; display:block" />
+			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.postagem.tags}" style="width: 384px; "></h:inputText><br></br><br></br>
 			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
-		</h:form>
+		</h:form></div>
 
 	</f:view>
 	</div>
+	</div></div>
 </body>
 </html>
