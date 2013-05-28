@@ -16,6 +16,18 @@
 			<from-outcome>erro</from-outcome>
 			<to-view-id>/operacaoFail.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
@@ -33,6 +45,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
@@ -46,6 +70,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
@@ -58,6 +94,18 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -76,6 +124,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	
@@ -86,6 +146,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
@@ -94,6 +166,18 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -104,6 +188,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 	
 	<navigation-rule>
@@ -112,6 +208,18 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -122,6 +230,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
@@ -130,6 +250,18 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	
@@ -140,6 +272,18 @@
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
 	</navigation-rule>
 
 	<navigation-rule>
@@ -148,6 +292,18 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
@@ -161,6 +317,18 @@
 		<navigation-case>
 			<from-outcome>Editar</from-outcome>
 			<to-view-id>/edicao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>Visualizar</from-outcome>
+			<to-view-id>/visualizacao.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>criarPostagem</from-outcome>
+			<to-view-id>/criarPostagem.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>buscas</from-outcome>
+			<to-view-id>/buscas.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 

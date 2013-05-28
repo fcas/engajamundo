@@ -27,14 +27,13 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink href = "criarPostagem.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink href = "buscas.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
 <h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
 					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
-
 	<f:view>
 	<div id="content">
 	

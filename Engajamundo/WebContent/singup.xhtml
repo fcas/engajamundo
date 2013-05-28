@@ -27,21 +27,12 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink href = "criarPostagem.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink href = "buscas.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+	<h:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
 <h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
 					value="Logoff"></h:commandLink></h:form>
    </div>
-</div>
-
-<div id="content">
-
-<div id="guia">
-	<a href="home.xhtml"><img id="botao" src="imagens/back.png" border="0" align="right"/></a>
-	<h2>Cadastre-se</h2>
-	<p>E seja um Engajador você também!</p>
-</div>
 
 <h:form>
 			<h:panelGrid columns="3">
