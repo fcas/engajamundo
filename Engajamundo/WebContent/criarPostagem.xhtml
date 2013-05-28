@@ -46,11 +46,18 @@
 				<h:panelGroup>
 			<c:forEach items="#{controllerPostagem.postagens}" var="postagem">		
 					<div id="contentboxcontent">
+						<h:form>
 						<h1><h:outputLabel value="#{postagem.titulo}"/></h1>
 						<h:outputLabel value="#{postagem.texto}"/><br/><br/>
 						<a>Postado por: </a><h:outputText value="#{postagem.login}"/><br/>
 						<a>Tags: </a><h:outputText value="#{postagem.tags}"/><br/>
+						<br/><h:commandLink id="deletar" rendered="#{controllerPostagem.permiteDelecao()}" actionListener="#{controllerPostagem.deletar}">
+						<f:param value="#{postagem.idPostagem}" name="idPostagem"/>  
+						<f:param value="#{postagem.login}" name="login"/>  
+						<h:outputLabel>Deletar</h:outputLabel>
+						</h:commandLink></h:form>
 					</div>
+					
 			</c:forEach>
 			
 			</h:panelGroup>
@@ -60,9 +67,8 @@
 			 <p>Título: </p><h:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></h:inputText><h:message for="titulo" errorStyle="color:red; display:block" />
 			  <p>Texto: </p><h:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </h:inputTextarea><h:message for="texto" errorStyle="color:red; display:block" />
 			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.postagem.tags}" style="width: 384px; "></h:inputText><br></br><br></br>
-			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
+ 			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
 		</h:form></div>
-
 	</f:view>
 	</div>
 	</div></div>

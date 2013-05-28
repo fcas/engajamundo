@@ -155,14 +155,11 @@ public class DaoHibernate implements IDAOEngajador {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Postagem> listarPostagens() {  
-	    
+	public List<Postagem> listarPostagens() {  	    
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
-
 		String query = "select p from Postagem p";
-
 		return em.createQuery(query).getResultList();
 	}
 
@@ -204,5 +201,19 @@ public class DaoHibernate implements IDAOEngajador {
 		return (Double) em.createQuery(query).getSingleResult();
 		
 	}
+	
+
+	public void deletarPostagem(int idPostagem)
+	{
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		em.getTransaction().begin();
+		Postagem post = em.find(Postagem.class, idPostagem);
+		em.remove(post);
+		em.getTransaction().commit();
+	}
+	
 
 }

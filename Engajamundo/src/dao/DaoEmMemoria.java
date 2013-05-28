@@ -166,4 +166,10 @@ public class DaoEmMemoria implements IDAOEngajador {
 		return null;
 	}
 
+	@Override
+	public void deletarPostagem(int idPostagem) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
