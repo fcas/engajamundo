@@ -7,11 +7,10 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import model.ServicoPostagem;
 import entities.Postagem;
 import exceptions.DaoException;
-import exceptions.LoginInvalidoException;
 import exceptions.UsuarioNaoAutenticadoException;
-import model.ServicoPostagem;
 
 @SessionScoped
 @ManagedBean(name="controllerPostagem")
