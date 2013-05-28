@@ -5,6 +5,7 @@ import java.util.List;
 
 import exceptions.DaoException;
 
+import entities.Crowdfunding;
 import entities.Engajador;
 import entities.Postagem;
 
@@ -151,6 +152,18 @@ public class DaoEmMemoria implements IDAOEngajador {
 	public void editar(Engajador engajador, String login) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void saveDoacao(Crowdfunding doacao) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Crowdfunding> getDoacoes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

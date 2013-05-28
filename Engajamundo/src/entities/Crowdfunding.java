@@ -1,41 +1,31 @@
 package entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-//@Entity
-//@Table(schema="engajamundoDB")  
+@Entity
+@Table(name="Crowdfunding", schema="engajamundoDB")  
 public class Crowdfunding {
 
-	Double metaCapacitacao;
-	Double valorCapitado;
-	Double porcentagem;
-	Double doacao;
-	int qtdPatrocinadores;
+	@Column (name="doacao")
+	public Double valor;
+	@Id
+	@Column (name="login", length=20)
+	public String login;
 	
-	public Double getMetaCapacitacao() {
-		return metaCapacitacao;
+	public Double getValor() {
+		return valor;
 	}
-	public void setMetaCapacitacao(Double metaCapacitacao) {
-		this.metaCapacitacao = metaCapacitacao;
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
-	public Double getValorCapitado() {
-		return valorCapitado;
+	public String getLogin() {
+		return login;
 	}
-	public void setValorCapitado(Double valorCapitado) {
-		this.valorCapitado = valorCapitado;
-	}
-	public int getQtdPatrocinadores() {
-		return qtdPatrocinadores;
-	}
-	public void setQtdPatrocinadores(int qtdPatrocinadores) {
-		this.qtdPatrocinadores = qtdPatrocinadores;
-	}
-	public Double getPorcentagem() {
-		return porcentagem;
-	}
-	public void setPorcentagem(Double porcentagem) {
-		this.porcentagem = porcentagem;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 	
 }
