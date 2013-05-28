@@ -72,7 +72,6 @@
 		</navigation-case>
 	</navigation-rule>
 	
-	
 	<navigation-rule>
 		<display-name>autenticacao</display-name>
 		<from-view-id>/home.xhtml</from-view-id>
@@ -230,6 +229,10 @@
 		<navigation-case>
 			<from-outcome>buscas</from-outcome>
 			<to-view-id>/buscas.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>erro</from-outcome>
+			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 
