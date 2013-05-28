@@ -5,6 +5,7 @@ import java.util.List;
 import exceptions.BuscaSemResultadoException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
+import entities.Crowdfunding;
 import entities.Engajador;
 import entities.Postagem;
 
@@ -31,4 +32,8 @@ public interface IDAOEngajador {
 	Engajador buscarPorLogin(String login);
 
 	void editar(Engajador engajador, String login);
+
+	void saveDoacao(Crowdfunding doacao);
+
+	List<Crowdfunding> getDoacoes();
 }

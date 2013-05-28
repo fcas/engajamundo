@@ -7,6 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import entities.Crowdfunding;
 import entities.Engajador;
 import entities.Postagem;
 import exceptions.BuscaSemResultadoException;
@@ -183,6 +184,21 @@ public class DaoHibernate implements IDAOEngajador {
 		em.merge(engajador_old);
 		em.getTransaction().commit();
 
+	}
+
+	@Override
+	public void saveDoacao(Crowdfunding doacao) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(doacao);
+		em.getTransaction().commit();	
+	}
+
+	@Override
+	public List<Crowdfunding> getDoacoes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
