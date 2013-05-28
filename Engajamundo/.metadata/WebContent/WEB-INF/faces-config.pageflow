@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13690483497430" configfile="/Engajamundo/WebContent/WEB-INF/faces-config.xml">
   <nodes xsi:type="pageflow:PFPage" name="singup" x="338" y="1512" id="pf13691473217758" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13694416442400 pf13694416442401" path="/singup.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="338" y="1896" id="pf136914732177511" referenceLink="//@navigationRule.11/@navigationCase.1/@toViewId|" outlinks="pf136914732177512 pf136914732177513 pf136968753985155" inlinks="pf136968753985156" path="/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Edicao" x="338" y="1896" id="pf136914732177511" referenceLink="//@navigationRule.12/@navigationCase.1/@toViewId|" outlinks="pf136914732177512 pf136914732177513 pf136968753985155" inlinks="pf136968753985156" path="/edicao.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="OperacaoFail" x="554" y="1512" id="pf136914732177516" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" inlinks="pf136914732177513 pf13694416442401" path="/operacaoFail.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="OperacaoSucesso" x="554" y="1896" id="pf136914732177517" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf136914732177512 pf13694416442400" path="/operacaoSucesso.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="autenticacao" x="554" y="3069" id="pf13695927690842" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf136965541026125 pf13697019287560 pf136970193572111" inlinks="pf136965541026125 pf136965565717429 pf136965591897841 pf136965597916244 pf136965608527553 pf136968753985155 pf13697019287561 pf13697019287562 pf13697019287563 pf13697019287564" path="/home.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="autenticacao" x="554" y="3069" id="pf13695927690842" referenceLink="//@navigationRule.12/@navigationCase.0/@toViewId|" outlinks="pf136965541026125 pf13697019287560 pf136970193572111" inlinks="pf136965541026125 pf136965565717429 pf136965591897841 pf136965597916244 pf136965608527553 pf136968753985155 pf13697019287561 pf13697019287562 pf13697019287563 pf13697019287564" path="/home.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="home" x="122" y="178" id="pf13695927690855" referenceLink="//@navigationRule.16/@fromViewId|" path="/home_engajador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="home" x="122" y="562" id="pf13695927690856" referenceLink="//@navigationRule.15/@fromViewId|" path="/home_admin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="buscas" x="122" y="4402" id="pf13696220947447" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf136965565717429 pf13697019287565 pf13697019287566" path="/buscas.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="buscas" x="122" y="4402" id="pf13696220947447" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf136965565717429 pf13697019287565 pf13697019287566" path="/buscas.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="buscas" x="122" y="946" id="pf136962210868816" referenceLink="//@navigationRule.4/@fromViewId|" path="/buscas_engajador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="buscaPorNome" x="122" y="1330" id="pf136962253990719" referenceLink="//@navigationRule.6/@fromViewId|" path="/buscaPorNome_admin.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="buscaPorPais" x="122" y="1714" id="pf136962253990720" referenceLink="//@navigationRule.8/@fromViewId|" path="/buscaPorPais_admin.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="buscaPorNome" x="122" y="2098" id="pf136962254721922" referenceLink="//@navigationRule.5/@fromViewId|" path="/buscaPorNome_engajador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="buscaPorPais" x="122" y="2482" id="pf136962255232924" referenceLink="//@navigationRule.7/@fromViewId|" path="/buscaPorPais_engajador.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="buscaPorPais" x="338" y="3837" id="pf136965541026128" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf13697019287562" inlinks="pf13697019287566" path="/buscaPorPais.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="buscaPorPais" x="338" y="3837" id="pf136965541026128" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf13697019287562" inlinks="pf13697019287566" path="/buscaPorPais.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="about" x="122" y="3250" id="pf136965577493235" referenceLink="//@navigationRule.9/@fromViewId|" path="/about_engajador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="about" x="122" y="3634" id="pf136965582063538" referenceLink="//@navigationRule.10/@fromViewId|" path="/about_admin.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="postagem" x="122" y="4018" id="pf136965590763440" referenceLink="//@navigationRule.11/@fromViewId|" path="/criarPostagem_admin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="postagem" x="338" y="2280" id="pf136965591897942" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf136965591897841" path="/criarPostagem.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="postagem" x="338" y="2280" id="pf136965591897942" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf136965591897841" path="/criarPostagem.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="crowdfunding" x="122" y="4786" id="pf136965597917845" referenceLink="//@navigationRule.13/@fromViewId|" path="/crowdfunding_admin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="crowdfunding" x="338" y="2664" id="pf136965597917846" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf136965597916244" path="/crowdfunding.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="crowdfunding" x="338" y="2664" id="pf136965597917846" referenceLink="//@navigationRule.9/@fromViewId|" outlinks="pf136965597916244" path="/crowdfunding.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="video" x="122" y="5170" id="pf136965604871750" referenceLink="//@navigationRule.17/@fromViewId|" path="/video_engajador.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="video" x="122" y="5554" id="pf136965606021252" referenceLink="//@navigationRule.18/@fromViewId|" path="/video_admin.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="visualizacao" x="122" y="2866" id="pf136965608527654" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf136965608527553 pf136968753985156" path="/visualizacao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="visualizacao" x="122" y="2866" id="pf136965608527654" referenceLink="//@navigationRule.12/@fromViewId|" outlinks="pf136965608527553 pf136968753985156" path="/visualizacao.xhtml"/>
   <nodes xsi:type="pageflow:PFPage" name="boasvindas.xhtml" x="770" y="3069" id="pf13697019287587" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf13697019287560 pf136970193572111" path="/boasvindas.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="buscaPorNome" x="338" y="4221" id="pf13697019287588" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf13697019287561" inlinks="pf13697019287565" path="/buscaPorNome.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="about" x="338" y="3069" id="pf13697019287589" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf13697019287563" path="/about.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="video" x="338" y="3453" id="pf136970192875810" referenceLink="//@navigationRule.10/@fromViewId|" outlinks="pf13697019287564" path="/video.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="buscaPorNome" x="338" y="4221" id="pf13697019287588" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf13697019287561" inlinks="pf13697019287565" path="/buscaPorNome.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="about" x="338" y="3069" id="pf13697019287589" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf13697019287563" path="/about.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="video" x="338" y="3453" id="pf136970192875810" referenceLink="//@navigationRule.11/@fromViewId|" outlinks="pf13697019287564" path="/video.xhtml"/>
   <links id="pf136914732177512" target="pf136914732177517" source="pf136914732177511" outcome="sucesso"/>
   <links id="pf136914732177513" target="pf136914732177516" source="pf136914732177511" outcome="erro"/>
   <links id="pf13694416442400" target="pf136914732177517" source="pf13691473217758" outcome="sucesso"/>
