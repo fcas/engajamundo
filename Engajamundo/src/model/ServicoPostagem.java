@@ -9,8 +9,9 @@ import dao.DaoHibernate;
 import dao.IDAOEngajador;
 import entities.Engajador;
 import entities.Postagem;
+import exceptions.UsuarioNaoAutenticadoException;
 
-public class ServicoPostagem {
+public class ServicoPostagem implements IServicoPostagem {
 
 	private static ServicoPostagem singleton = null;
 
@@ -34,18 +35,20 @@ public class ServicoPostagem {
 		return daoEngajador.listarPostagens();
 	}
 	
-	public void postar(Postagem post, String tagAux)
+	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException
 	{
 		post.setTags(tagAux);
 		
 		HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
-		String login = ((Engajador) session.getAttribute("usuario")).getLogin();
+		
+		String login = null;
+		
+		if (session.getAttribute("usuario")!=null){
+			login = ((Engajador) session.getAttribute("usuario")).getLogin();
+		} else throw new UsuarioNaoAutenticadoException(); 
+		
 		post.setLogin(login);
 		
 		daoEngajador.savePost(post);
-	}
-	
-	public void deletar(int idPostagem){
-		daoEngajador.deletarPostagem(idPostagem);
 	}
 }
