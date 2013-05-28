@@ -3,10 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Bem vindo!</title>
+<title>Início</title>
 <link rel="StyleSheet" type="text/css" href="css/style.css" />
 </head>
 <body>
+
 
 <div id="bg">
 
@@ -19,14 +20,19 @@
    <object id="like" type="text/html" data="https://www.facebook.com/plugins/like.php?href=https://www.facebook.com/engajamundo?fref=ts" border="0" align="left" style="border:none; width:400px; padding-left:120px;position:relative;height:60px;"></object>
    
    <div id="listamenu">
+   <!-- opcoes visiveis a todos -->
    <a href = "home_admin.xhtml">Inicio</a>
-   <a href = "visualizacao.xhtml">Usuários</a>
-   <a href = "criarPostagem_admin.xhtml">Criar Postagem</a>
-   <a href = "buscas_admin.xhtml">Buscas</a>
+   <a href = "about_admin.xhtml">Sobre</a>
    <a href = "crowdfunding_admin.xhtml">Patrocine!</a>
    <a href = "video_admin.xhtml">LiveStream</a>
-   <a href = "about_admin.xhtml">Sobre</a>
-  <h:form><h:commandLink value="Fazer Logoff" target="home.xhtml" action="#{controllerSession.logoff}"></h:commandLink></h:form>
+   <br/>
+   <!-- apenas usuarios e admins -->
+<h:form>
+	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+	<h:commandLink href = "criarPostagem_admin.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+	<h:commandLink href = "buscas_admin.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
 
