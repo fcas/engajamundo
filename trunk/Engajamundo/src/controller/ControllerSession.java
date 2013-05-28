@@ -57,6 +57,7 @@ public class ControllerSession {
 		HttpSession session = ( HttpSession ) FacesContext.getCurrentInstance().getExternalContext().getSession(false);	
 		session.removeAttribute("usuario");
 		estaLogado = false;
+		ehAdmin = false;
 		
 		return "logoff";
 		

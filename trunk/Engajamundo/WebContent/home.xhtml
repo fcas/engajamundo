@@ -27,52 +27,49 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink href = "criarPostagem.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink href = "buscas.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
+        <h:commandLink href = "visualizacao.xhtml" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
+        <h:commandLink href = "criarPostagem.xhtml" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
+        <h:commandLink href = "buscas.xhtml" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
 <h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
-					value="Logoff"></h:commandLink></h:form>
-   </div>
-</div><h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
-					value="Logoff"></h:commandLink></h:form>
+                                        value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
 
 <div id="content">
 <div id="guia">
-	<b>Bem vindo!</b>
-	<p>Informe o nome de usuario e senha nos campos abaixo.</p>
-	<b>Se nao for cadastrado,</b> <a href= "singup.xhtml">cadastre-se.</a><p></p>
+        <b>Bem vindo!</b>
+        <p>Informe o nome de usuario e senha nos campos abaixo.</p>
+        <b>Se nao for cadastrado,</b> <a href= "singup.xhtml">cadastre-se.</a><p></p>
 </div>
 
 <div id="login">
 
-	<h:form id="home">
-		<div id="user"> 
-	  		Login: <h:inputText style="width: 120px;" required="true" id = "login" requiredMessage="Informe o seu login" value="#{controllerSession.login}">
-			<f:validator validatorId="loginCorretoValidator"/>
-			</h:inputText>
-    	</div>
-	
-		<div id="password">
-	  		Senha:<h:inputSecret style="width: 120px;" id="password" required="true" requiredMessage="Informe a sua senha" value="#{controllerSession.senha}"></h:inputSecret>
-		    <h:message for="login" errorStyle="color:red; display:block" />
-		    <h:message for="password" errorStyle="color:red; display:block" />
-		</div>
+        <h:form id="home">
+                <div id="user"> 
+                        Login: <h:inputText style="width: 120px;" required="true" id = "login" requiredMessage="Informe o seu login" value="#{controllerSession.login}">
+                        <f:validator validatorId="loginCorretoValidator"/>
+                        </h:inputText>
+        </div>
+        
+                <div id="password">
+                        Senha:<h:inputSecret style="width: 120px;" id="password" required="true" requiredMessage="Informe a sua senha" value="#{controllerSession.senha}"></h:inputSecret>
+                    <h:message for="login" errorStyle="color:red; display:block" />
+                    <h:message for="password" errorStyle="color:red; display:block" />
+                </div>
 
-	<p></p>
-		<div id="button-login">
-		  <h:commandButton action="#{controllerSession.autenticar}" value="Entrar!"></h:commandButton>
-		</div>		
+        <p></p>
+                <div id="button-login">
+                  <h:commandButton action="#{controllerSession.autenticar}" value="Entrar!"></h:commandButton>
+                </div>          
 
-	</h:form>
+        </h:form>
 
 </div>
 
 </div>
 
 <div id="footer">
-	MIT Licence
+        MIT Licence
 </div>
 
 </div>
