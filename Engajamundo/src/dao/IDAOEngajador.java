@@ -35,5 +35,5 @@ public interface IDAOEngajador {
 
 	void saveDoacao(Crowdfunding doacao);
 
-	List<Crowdfunding> getDoacoes();
+	Double getDoacoes();
 }

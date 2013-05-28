@@ -161,7 +161,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 	}
 
 	@Override
-	public List<Crowdfunding> getDoacoes() {
+	public Double getDoacoes() {
 		// TODO Auto-generated method stub
 		return null;
 	}
