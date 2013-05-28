@@ -36,4 +36,6 @@ public interface IDAOEngajador {
 	void saveDoacao(Crowdfunding doacao);
 
 	Double getDoacoes();
+
+	void deletarPostagem(int idPostagem);
 }

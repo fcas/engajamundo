@@ -3,6 +3,8 @@ package entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,8 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Postagem", schema="engajamundoDB")  
 public class Postagem {
-
 	@Id
+	@Column(name="idPostagem")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int idPostagem;
+	
 	@Column(name="login", length=20)
 	private String login;
 	@Column(name="titulo", length=20)
@@ -64,5 +69,13 @@ public class Postagem {
 
 	public void setTags(String tags) {
 		this.tags = tags;
+	}
+	
+	public void setIdPostagem(int idPostagem){
+		this.idPostagem = idPostagem;
+	}
+	
+	public int getIdPostagem(){
+		return idPostagem;
 	}
 }

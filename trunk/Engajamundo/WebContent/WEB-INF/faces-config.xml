@@ -72,6 +72,7 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	
 	<navigation-rule>
 		<display-name>autenticacao</display-name>
 		<from-view-id>/home.xhtml</from-view-id>
