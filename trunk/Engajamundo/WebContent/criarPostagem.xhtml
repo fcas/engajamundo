@@ -50,7 +50,7 @@
 
 		
 			<p>Título: </p><h:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></h:inputText><h:message for="titulo" errorStyle="color:red; display:block" />
-			<p>Texto: </p><h:inputTextarea id = "texto" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </h:inputTextarea><h:message for="texto" errorStyle="color:red; display:block" />
+			<p>Texto: </p><h:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </h:inputTextarea><h:message for="texto" errorStyle="color:red; display:block" />
 			<p>Tags (separadas por ponto e vírgula): </p><h:inputText  value="#{controllerPostagem.tagAux}" style="width: 384px; "></h:inputText><br></br><br></br>
 			<h:commandButton action="#{controllerPostagem.postar}" value="Postar"></h:commandButton>
 		</h:form>
