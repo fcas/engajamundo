@@ -115,6 +115,14 @@ public class ControllerEngajador {
 		return "Visualizar";
 	}
 	
+	public String criarPostagem(){ 
+		return "criarPostagem";
+	}
+	
+	public String buscas(){
+		return "buscas";
+	}
+	
 	public String atualizar()
 	{
 		String login;
