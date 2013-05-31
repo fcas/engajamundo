@@ -51,4 +51,8 @@ public class ServicoPostagem {
             
             daoEngajador.savePost(post);
     }
+	
+	public void deletar(int idPostagem){
+		daoEngajador.deletarPostagem(idPostagem);
+	}
 }
