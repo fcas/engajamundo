@@ -34,17 +34,21 @@
 					value="Logoff"></h:commandLink></h:form>
    </div>
 </div>
-        <f:view>    
-                <h1>Buscar Usuário</h1>
-                
-                <h:panelGrid columns="2">
+        <f:view>  
+                <div id="contentbox">
+				<a href="home.xhtml"><img id="botao" src="imagens/back.png" border="0" align="right"/></a>
+					<div id="contentboxtop">
+						<p>Buscas</p>
+					</div>
+					<div id="login">
                         <h:form>
                                 <h:commandButton action="#{controllerEngajador.buscarPorNome}"
-                                        value="Busca por nome"></h:commandButton>
+                                        value="Busca por nome"></h:commandButton><br/>
                                 <h:commandButton action="#{controllerEngajador.buscarPorPais}"
                                         value="Busca por país"></h:commandButton>
                         </h:form>
-                </h:panelGrid>
+	                 </div>
+                </div>
         </f:view></div>
 </body>
 </html>

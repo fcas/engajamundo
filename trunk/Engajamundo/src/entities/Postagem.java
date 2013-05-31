@@ -12,11 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Postagem", schema="engajamundoDB")  
 public class Postagem {
+
 	@Id
 	@Column(name="idPostagem")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int idPostagem;
-	
 	@Column(name="login", length=20)
 	private String login;
 	@Column(name="titulo", length=20)
@@ -25,7 +25,6 @@ public class Postagem {
 	private String texto;
 	@Column(name="tag", length=50)
 	private String tags;
-	
 	public Postagem()
 	{
 		
@@ -70,12 +69,12 @@ public class Postagem {
 	public void setTags(String tags) {
 		this.tags = tags;
 	}
-	
-	public void setIdPostagem(int idPostagem){
-		this.idPostagem = idPostagem;
-	}
-	
-	public int getIdPostagem(){
+
+	public int getIdPostagem() {
 		return idPostagem;
+	}
+
+	public void setIdPostagem(int idPostagem) {
+		this.idPostagem = idPostagem;
 	}
 }
