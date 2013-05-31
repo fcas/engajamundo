@@ -45,10 +45,10 @@ public class ControllerSession {
 		}
 		}
 			catch(LoginInvalidoException e){
-				FacesMessage message = new FacesMessage("Senha incorreta");  
-	            message.setSeverity(FacesMessage.SEVERITY_ERROR);  
-	            FacesContext.getCurrentInstance().addMessage("home:password", message);  
-				return "erro";
+			FacesMessage message = new FacesMessage("Senha incorreta");  
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);  
+            FacesContext.getCurrentInstance().addMessage("home:password", message);  
+			return "erro";
 			}
 	}
 	
@@ -98,5 +98,6 @@ public class ControllerSession {
 	public void setEstaLogado(boolean estaLogado) {
 		this.estaLogado = estaLogado;
 	}
+	
 	
 }
