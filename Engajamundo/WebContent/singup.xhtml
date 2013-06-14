@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<html xmlns:p="http://primefaces.org/ui" xmlns="http://www.w3.org/1999/xhtml"  xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Cadastrar-se</title>
 <link rel="StyleSheet" type="text/css" href="css/style.css" />
-</head>
+</h:head>
 <body>
 
 <div id="bg">
@@ -36,86 +36,88 @@
 
 <h:form>
 			<h:panelGrid columns="3">
-				<h:outputLabel value="Nome: " for="nome" />
-				<h:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
+				<p:outputLabel value="Nome: " for="nome" />
+				<p:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.nome}">
 					<f:validator validatorId="nomeValidator" />
-				</h:inputText>
-				<h:message for="nome" errorStyle="color:red; display:block" />
+				</p:inputText>
+				<p:message for="nome" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Sobrenome: " for="sobrenome" />
-				<h:inputText label="Sobrenome" id="sobrenome" required="true" requiredMessage="Campo obrigatório"
+				<p:outputLabel value="Sobrenome: " for="sobrenome" />
+				<p:inputText label="Sobrenome" id="sobrenome" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.sobrenome}">
 					<f:validator validatorId="nomeValidator" />
-				</h:inputText>
-				<h:message for="sobrenome" errorStyle="color:red; display:block" />
+				</p:inputText>
+				<p:message for="sobrenome" errorStyle="color:red; display:block" />
 
 
-				<h:outputLabel value="Email: " for="email" />
-				<h:inputText label="Email" id="email" required="true" requiredMessage="Campo obrigatório"
+				<p:outputLabel value="Email: " for="email" />
+				<p:inputText label="Email" id="email" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.email}">
 					<f:validator validatorId="emailValidator" />
-				</h:inputText>
-				<h:message for="email" errorStyle="color:red; display:block" />
+				</p:inputText>
+				<p:message for="email" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Data de nascimento: " for="data" />
-				<h:inputText label="Data" id="data" required="true" requiredMessage="Campo obrigatório"
-					value="#{controllerEngajador.engajador.data_nascimento}">
+				<p:outputLabel value="Data de nascimento: " for="data" />
+				<p:inputMask label="Data" id="data" required="true" requiredMessage="Campo obrigatório"
+					value="#{controllerEngajador.engajador.data_nascimento}" mask="99/99/9999">
 					<f:validator validatorId="dataValidator" />
-				</h:inputText>
-				<h:message for="data" errorStyle="color:red; display:block" />
+				</p:inputMask>
+				<p:message for="data" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Telefone: " for="telefone" />
-				<h:inputText label="Telefone" id="telefone"
-					value="#{controllerEngajador.engajador.telefone}">
+				<p:outputLabel value="Telefone: " for="telefone" />
+				<p:inputMask label="Telefone" id="telefone"
+					value="#{controllerEngajador.engajador.telefone}" mask="(099)-9999-9999">
 				<!--  	<f:validator validatorId="telefoneValidator" /> -->
-				</h:inputText>
-				<h:message for="telefone" errorStyle="color:red; display:block" />
+				</p:inputMask>
+				<p:message for="telefone" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Skype: "></h:outputLabel>
-				<h:inputText id="skype"
-					value="#{controllerEngajador.engajador.profile_skype}"></h:inputText>
+				<p:outputLabel value="Skype: "></p:outputLabel>
+				<p:inputText id="skype"
+					value="#{controllerEngajador.engajador.profile_skype}"></p:inputText>
 				<br></br>
 
-				<h:outputLabel value="Link da página do Facebook: "></h:outputLabel>
-				<h:inputText id="facebook"
-					value="#{controllerEngajador.engajador.profile_facebook}"></h:inputText>
+				<p:outputLabel value="Link da página do Facebook: "></p:outputLabel>
+				<p:inputText id="facebook"
+					value="#{controllerEngajador.engajador.profile_facebook}"></p:inputText>
 				<br></br>
-				<h:outputLabel value="Cidade: "></h:outputLabel>
-				<h:inputText id="cidade" required="true" requiredMessage="Campo obrigatório"
-					value="#{controllerEngajador.engajador.cidade}"></h:inputText>
-                                <h:message for="cidade" errorStyle="color:red; display:block" />
+				<p:outputLabel value="Cidade: "></p:outputLabel>
+				<p:inputText id="cidade" required="true" requiredMessage="Campo obrigatório"
+					value="#{controllerEngajador.engajador.cidade}"></p:inputText>
+                                <p:message for="cidade" errorStyle="color:red; display:block" />
 				
 				
-				<h:outputLabel value="Estado: "></h:outputLabel>
-				<h:inputText id="estado" required="true" requiredMessage="Campo obrigatório"
-					value="#{controllerEngajador.engajador.estado}"></h:inputText>
-                                <h:message for="estado" errorStyle="color:red; display:block" />
+				<p:outputLabel value="Estado: "></p:outputLabel>
+				<p:inputText id="estado" required="true" requiredMessage="Campo obrigatório"
+					value="#{controllerEngajador.engajador.estado}"></p:inputText>
+                                <p:message for="estado" errorStyle="color:red; display:block" />
 			
 
-				<h:outputLabel value="Pais: "></h:outputLabel>
-				<h:inputText id="pais" value="#{controllerEngajador.engajador.pais}" 
-                                   required="true" requiredMessage="Campo obrigatório"></h:inputText>
-                                <h:message for="pais" errorStyle="color:red; display:block" />
+				<p:outputLabel value="Pais: "></p:outputLabel>
+				<p:inputText id="pais" value="#{controllerEngajador.engajador.pais}" 
+                                   required="true" requiredMessage="Campo obrigatório"></p:inputText>
+                                <p:message for="pais" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Login: " for="login" />
-				<h:inputText label="Login" id="login" required="true" requiredMessage="Campo obrigatório"
+				<p:outputLabel value="Login: " for="login" />
+				<p:inputText label="Login" id="login" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.login}">
 					<f:validator validatorId="loginValidator" />
-				</h:inputText>
-				<h:message for="login" errorStyle="color:red; display:block" />
+				</p:inputText>
+				<p:message for="login" errorStyle="color:red; display:block" />
 
-				<h:outputLabel value="Senha: " for="senha" />
-				<h:inputSecret label="Senha" id="senha" required="true" requiredMessage="Campo obrigatório"
+				<p:outputLabel value="Senha: " for="senha" />
+				<p:password label="Senha" id="senha" required="true" requiredMessage="Campo obrigatório"
 					value="#{controllerEngajador.engajador.senha}">
-				</h:inputSecret><br></br>
+				</p:password><br></br>
 
-				<h:outputLabel value="Comentários: "></h:outputLabel>
-				<h:inputTextarea
-					value="#{controllerEngajador.engajador.comentarios}"></h:inputTextarea>
+				<p:outputLabel value="Comentários: "></p:outputLabel>
+				<p:inputTextarea rows="6" cols="33"
+					value="#{controllerEngajador.engajador.comentarios}">
+				</p:inputTextarea>
+					
 				<br></br><br></br><br></br>
-				<h:commandButton action="#{controllerEngajador.cadastrarEngajador}"
-					value="Pronto!"></h:commandButton>
+				<p:commandButton action="#{controllerEngajador.cadastrarEngajador}"
+					value="Pronto!"></p:commandButton>
 			</h:panelGrid>
 		</h:form>
 </div>
