@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<html xmlns:p="http://primefaces.org/ui" xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Busca por País</title>
 <link rel="StyleSheet" type="text/css" href="css/style.css" />
-</head>
+</h:head>
 <body>
 
 <div id="bg">
@@ -27,11 +27,11 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
-<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
-					value="Logoff"></h:commandLink></h:form>
+	<p:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </p:commandLink>
+<p:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></p:commandLink></h:form>
    </div>
 </div>
 	<f:view>
@@ -46,14 +46,14 @@
 		<div id="contentboxcontent">
 			<h:form id="busca">
 				<h:panelGroup columns="3">
-					<h:outputLabel value="País: " for="nome" />
-					<h:inputText label="Nome" id="nome" required="true"
+					<p:outputLabel value="País: " for="nome" />
+					<p:inputText label="Nome" id="nome" required="true"
 						value="#{controllerEngajador.query}">
 						<f:validator validatorId="nomeValidator" />
-					</h:inputText>
-					<h:message for="nome" errorStyle="color:red; display:block" />
-					<h:commandButton action="#{controllerEngajador.buscarEngajadorPorPais}"
-						value="Buscar"></h:commandButton>
+					</p:inputText>
+					<p:message for="nome" errorStyle="color:red; display:block" />
+					<p:commandButton action="#{controllerEngajador.buscarEngajadorPorPais}"
+						value="Buscar"></p:commandButton>
 				</h:panelGroup>
 			</h:form>
 			<br/>
@@ -65,14 +65,14 @@
 					<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
 						<tr>
 						<td><h:selectBooleanCheckbox value="#{usuario.selecionado}"/></td>
-						<td><h:outputLabel value="#{usuario.nome}"></h:outputLabel></td>
-						<td><h:outputLabel value="#{usuario.sobrenome}"></h:outputLabel></td>
-						<td><h:outputLabel value="#{usuario.email}"></h:outputLabel></td>
+						<td><p:outputLabel value="#{usuario.nome}"></p:outputLabel></td>
+						<td><p:outputLabel value="#{usuario.sobrenome}"></p:outputLabel></td>
+						<td><p:outputLabel value="#{usuario.email}"></p:outputLabel></td>
 						</tr>
 					</c:forEach>
 				</table>
-				<h:commandButton action="#{controllerEngajador.deletar}"
-						value="Deletar itens selecionados"></h:commandButton>
+				<p:commandButton action="#{controllerEngajador.deletar}"
+						value="Deletar itens selecionados" ajax="false"></p:commandButton>
 				</h:form>
 			</h:panelGroup>
 		</div>
