@@ -53,7 +53,7 @@
 					</p:inputText>
 					<p:message for="nome" errorStyle="color:red; display:block" />
 					<p:commandButton action="#{controllerEngajador.buscarEngajadorPorPais}"
-						value="Buscar"></p:commandButton>
+						value="Buscar" ajax="false"></p:commandButton>
 				</h:panelGroup>
 			</h:form>
 			<br/>
@@ -64,14 +64,14 @@
 					<tr><th></th><th>Nome</th><th>Sobrenome</th><th>Email</th></tr>
 					<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
 						<tr>
-						<td><h:selectBooleanCheckbox value="#{usuario.selecionado}"/></td>
+						<td><p:selectBooleanCheckbox value="#{usuario.selecionado}"/></td>
 						<td><p:outputLabel value="#{usuario.nome}"></p:outputLabel></td>
 						<td><p:outputLabel value="#{usuario.sobrenome}"></p:outputLabel></td>
 						<td><p:outputLabel value="#{usuario.email}"></p:outputLabel></td>
 						</tr>
 					</c:forEach>
 				</table>
-				<p:commandButton action="#{controllerEngajador.deletar}"
+				<p:commandButton actionListener="#{controllerEngajador.deletar}"
 						value="Deletar itens selecionados" ajax="false"></p:commandButton>
 				</h:form>
 			</h:panelGroup>
