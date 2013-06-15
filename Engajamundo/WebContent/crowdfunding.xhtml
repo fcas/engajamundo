@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<html xmlns:p="http://primefaces.org/ui"  xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Criar Postagem</title>
 <link rel="StyleSheet" type="text/css" href="css/style.css" />
-</head>
+</h:head>
 <body>
 
 <div id="bg">
@@ -27,11 +27,11 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
-<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
-					value="Logoff"></h:commandLink></h:form>
+	<p:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </p:commandLink>
+<p:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></p:commandLink></h:form>
    </div>
 </div>
 	<div id="content">
@@ -45,9 +45,9 @@
 	<f:view>
 				<h:panelGroup>
 					<div id="contentboxcontent">
-						<h1> Meta de Capacitação - R$: <h:outputLabel value="#{controllerCrowdfunding.metaCapacitacao}"/> reais </h1>
-						<h1> Valor Captado - R$: <h:outputLabel value="#{controllerCrowdfunding.valorCapitado}"/> reais </h1>
-						<h1> <h:outputLabel value="#{controllerCrowdfunding.porcentagem}"/>% da meta alcançada </h1>
+						<h1> Meta de Capacitação - R$: <p:outputLabel value="#{controllerCrowdfunding.metaCapacitacao}"/> reais </h1>
+						<h1> Valor Captado - R$: <p:outputLabel value="#{controllerCrowdfunding.valorCapitado}"/> reais </h1>
+						<h1> <p:outputLabel value="#{controllerCrowdfunding.porcentagem}"/>% da meta alcançada </h1>
 					</div>
 			
 			</h:panelGroup>
@@ -55,16 +55,16 @@
 		<div id="contentboxcontent">
 		<h:form>
 			<p>Valor:</p>
-				<h:inputText id="doacao" required="true"
+				<p:inputText id="doacao" required="true"
 					requiredMessage="Campo obrigatório"
 					value="#{controllerCrowdfunding.doacao.valor}">
 					<f:validator validatorId="doacaoValidator"></f:validator>
-				</h:inputText>
-				<h:message for="doacao" errorStyle="color:red; display:block" />
+				</p:inputText>
+				<p:message for="doacao" errorStyle="color:red; display:block" />
 				<br></br>
 				<br></br>
-				<h:commandButton action="#{controllerCrowdfunding.doar}"
-					value="Doar!"></h:commandButton>
+				<p:commandButton action="#{controllerCrowdfunding.doar}"
+					value="Doar!" ajax="false"></p:commandButton>
 		</h:form></div>
 
 	</f:view>

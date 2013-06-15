@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
+<html xmlns:p="http://primefaces.org/ui" xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>About</title>
 <link rel="StyleSheet" type="text/css" href="css/style.css" />
-</head>
+</h:head>
 <body>
 
 
@@ -28,11 +28,11 @@
    <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
-	<h:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </h:commandLink>
-	<h:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </h:commandLink>
-<h:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
-					value="Logoff"></h:commandLink></h:form>
+	<p:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.criarPostagem}" rendered="#{controllerSession.estaLogado}">Postagens </p:commandLink>
+	<p:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </p:commandLink>
+<p:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
+					value="Logoff"></p:commandLink></h:form>
    </div>
 </div>
 
