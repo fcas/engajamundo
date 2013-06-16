@@ -35,6 +35,9 @@
 </div>
 <div>
 <h:form>
+
+<p:growl id="growl" showDetail="true" sticky="true" />
+
 			<h:panelGrid columns="3">
 				<p:outputLabel value="Nome: " for="nome" />
 				<p:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
@@ -117,7 +120,7 @@
 					
 				<br></br><br></br><br></br>
 				<p:commandButton actionListener="#{controllerEngajador.cadastrarEngajador}"
-					value="Pronto!" ajax="false"></p:commandButton>
+					value="Pronto!" ajax="false" update="growl"></p:commandButton>
 			</h:panelGrid>
 		</h:form>
 </div>
