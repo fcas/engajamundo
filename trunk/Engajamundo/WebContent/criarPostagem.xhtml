@@ -52,11 +52,11 @@
 							<a>Postado por: </a><h:outputText value="#{postagem.login}"/><br/>
 							<a>Tags: </a><h:outputText value="#{postagem.tags}"/><br/>
 						
-							<p:commandLink id="deletar"  rendered="#{controllerPostagem.podeDeletar(controllerSession.login, postagem.login)}" actionListener="#{controllerPostagem.deletar}">
+							<h:commandLink id="deletar"  rendered="#{controllerPostagem.podeDeletar(controllerSession.login, postagem.login)}" actionListener="#{controllerPostagem.deletar}">
 							<f:param value="#{postagem.idPostagem}" name="idPostagem"/>  
 							<f:param value="#{postagem.login}" name="login"/>  
-							<p:commandLink>Deletar</p:commandLink>
-							</p:commandLink>
+							<h:outputLabel>Deletar</h:outputLabel>
+							</h:commandLink>
 						</div>
 					</h:form>
 					
@@ -67,10 +67,11 @@
 		<h1> Criar Postagem </h1>
 		<div id="contentboxcontent">
 		<h:form>
-			 <p>Título: </p><p:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></p:inputText><p:message for="titulo" errorStyle="color:red; display:block" />
-			  <p>Texto: </p><p:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </p:inputTextarea><p:message for="texto" errorStyle="color:red; display:block" />
+		<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
+			 <p>Título: </p><p:inputText id="titulo" required="true" requiredMessage="Digite um título" value="#{controllerPostagem.postagem.titulo}"></p:inputText>
+			  <p>Texto: </p><p:inputTextarea id = "texto" required="true" requiredMessage="Digite o conteúdo da mensagem" value="#{controllerPostagem.postagem.texto}" style="height: 119px; width: 384px; "><f:validator validatorId="mensagemValidator"></f:validator> </p:inputTextarea>
 			<p>Tags (separadas por ponto e vírgula): </p><p:inputText  value="#{controllerPostagem.postagem.tags}" style="width: 384px; "></p:inputText><br></br><br></br>
-			<p:commandButton action="#{controllerPostagem.postar}" value="Postar" ajax="false"></p:commandButton>
+			<p:commandButton action="#{controllerPostagem.postar}" value="Postar" ajax="false" update="growl"></p:commandButton>
 		</h:form></div>
 
 	</f:view>

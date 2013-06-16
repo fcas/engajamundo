@@ -80,9 +80,7 @@ public class ControllerEngajador {
 		try {
 				servicoUsuario.cadastrarEngajador(engajador);
 				action = "sucesso";
-				context.addMessage(null, new FacesMessage(engajador.getLogin(), "agora você faz parte do Engajamundo!"));
-				return action;
-
+			//	context.addMessage(null, new FacesMessage(engajador.getLogin(), "agora você faz parte do Engajamundo!"));				
 		} catch (DaoException e) {
 			action = "erro";
 			System.out.println(e);
@@ -153,7 +151,7 @@ public class ControllerEngajador {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (BuscaSemResultadoException e) {
-			FacesMessage message = new FacesMessage("Não existem usuários cadastrados nesse país!");  
+			FacesMessage message = new FacesMessage("Não existem usuários cadastrados com esse nome!");  
             message.setSeverity(FacesMessage.SEVERITY_ERROR);  
             FacesContext.getCurrentInstance().addMessage("busca:nome", message);  
 			return "erro";

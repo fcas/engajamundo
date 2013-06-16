@@ -45,6 +45,9 @@
 <div id="login">
 
         <h:form id="home">
+        
+<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
+        
                 <div id="user"> 
                         Login: <p:inputText style="width: 120px;" required="true" id = "login" requiredMessage="Informe o seu login" value="#{controllerSession.login}">
                         <f:validator validatorId="loginCorretoValidator"/>
@@ -53,13 +56,11 @@
         
                 <div id="password">
                         Senha:<p:password style="width: 120px;" id="password" required="true" requiredMessage="Informe a sua senha" value="#{controllerSession.senha}"></p:password>
-                    <p:message for="login" errorStyle="color:red; display:block" />
-                    <p:message for="password" errorStyle="color:red; display:block" />
                 </div>
 
         <p></p>
                 <div id="button-login">
-                  <p:commandButton action="#{controllerSession.autenticar}" value="Entrar!" ajax="false"></p:commandButton>
+                  <p:commandButton action="#{controllerSession.autenticar}" value="Entrar!" ajax="false"  update="growl"></p:commandButton>
                 </div>          
 
         </h:form>

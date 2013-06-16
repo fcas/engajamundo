@@ -54,17 +54,17 @@
 		<h1>Fazer doação</h1>
 		<div id="contentboxcontent">
 		<h:form>
+		<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
 			<p>Valor:</p>
 				<p:inputText id="doacao" required="true"
-					requiredMessage="Campo obrigatório"
+					requiredMessage="Informe o valor da Doação"
 					value="#{controllerCrowdfunding.doacao.valor}">
 					<f:validator validatorId="doacaoValidator"></f:validator>
 				</p:inputText>
-				<p:message for="doacao" errorStyle="color:red; display:block" />
 				<br></br>
 				<br></br>
 				<p:commandButton action="#{controllerCrowdfunding.doar}"
-					value="Doar!" ajax="false"></p:commandButton>
+					value="Doar!" ajax="false" update="growl"></p:commandButton>
 		</h:form></div>
 
 	</f:view>

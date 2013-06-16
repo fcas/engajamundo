@@ -36,44 +36,43 @@
 <div>
 <h:form>
 
-<p:growl id="growl" showDetail="true" sticky="true" />
+<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
 
 			<h:panelGrid columns="3">
 				<p:outputLabel value="Nome: " for="nome" />
-				<p:inputText label="Nome" id="nome" required="true" requiredMessage="Campo obrigatório"
+				<p:inputText label="Nome" id="nome" required="true" requiredMessage="Informe o seu Nome"
 					value="#{controllerEngajador.engajador.nome}">
 					<f:validator validatorId="nomeValidator" />
 				</p:inputText>
-				<p:message for="nome" errorStyle="color:red; display:block" />
-
+				<br></br>
+				
 				<p:outputLabel value="Sobrenome: " for="sobrenome" />
-				<p:inputText label="Sobrenome" id="sobrenome" required="true" requiredMessage="Campo obrigatório"
+				<p:inputText label="Sobrenome" id="sobrenome" required="true" requiredMessage="Informe o seu Sobrenome"
 					value="#{controllerEngajador.engajador.sobrenome}">
 					<f:validator validatorId="nomeValidator" />
 				</p:inputText>
-				<p:message for="sobrenome" errorStyle="color:red; display:block" />
-
+				<br></br>
 
 				<p:outputLabel value="Email: " for="email" />
-				<p:inputText label="Email" id="email" required="true" requiredMessage="Campo obrigatório"
+				<p:inputText label="Email" id="email" required="true" requiredMessage="Informe o seu Email"
 					value="#{controllerEngajador.engajador.email}">
 					<f:validator validatorId="emailValidator" />
 				</p:inputText>
-				<p:message for="email" errorStyle="color:red; display:block" />
+				<br></br>
 
 				<p:outputLabel value="Data de nascimento: " for="data" />
-				<p:inputMask label="Data" id="data" required="true" requiredMessage="Campo obrigatório"
+				<p:inputMask label="Data" id="data" required="true" requiredMessage="Informe a sua Data de Nascimento"
 					value="#{controllerEngajador.engajador.data_nascimento}" mask="99/99/9999">
 					<f:validator validatorId="dataValidator" />
 				</p:inputMask>
-				<p:message for="data" errorStyle="color:red; display:block" />
+				<br></br>
 
 				<p:outputLabel value="Telefone: " for="telefone" />
 				<p:inputMask label="Telefone" id="telefone"
 					value="#{controllerEngajador.engajador.telefone}" mask="(099)-9999-9999">
 				<!--  	<f:validator validatorId="telefoneValidator" /> -->
 				</p:inputMask>
-				<p:message for="telefone" errorStyle="color:red; display:block" />
+				<br></br>
 
 				<p:outputLabel value="Skype: "></p:outputLabel>
 				<p:inputText id="skype"
@@ -84,32 +83,36 @@
 				<p:inputText id="facebook"
 					value="#{controllerEngajador.engajador.profile_facebook}"></p:inputText>
 				<br></br>
-				<p:outputLabel value="Cidade: "></p:outputLabel>
-				<p:inputText id="cidade" required="true" requiredMessage="Campo obrigatório"
-					value="#{controllerEngajador.engajador.cidade}"></p:inputText>
-                                <p:message for="cidade" errorStyle="color:red; display:block" />
 				
+				<p:outputLabel value="Cidade: "></p:outputLabel>
+				<p:inputText id="cidade"
+					value="#{controllerEngajador.engajador.cidade}"></p:inputText>
+                <br></br>
+                
 				<p:outputLabel value="Estado: "></p:outputLabel>
-				<p:inputText id="estado" required="true" requiredMessage="Campo obrigatório"
-					value="#{controllerEngajador.engajador.estado}"></p:inputText>
-                                <p:message for="estado" errorStyle="color:red; display:block" />
-
+				<p:inputText id="estado"
+					value="#{controllerEngajador.engajador.estado}">
+				</p:inputText>
+				<br></br>
+                                
 	            <p:outputLabel value="Pais: "></p:outputLabel>
 				<p:selectOneMenu value="#{controllerEngajador.engajador.pais}" 
-					id="pais" >
-					<f:selectItems value="#{formPaises.paises}"
+					id="pais" editable="true" requiredMessage="Informe o seu País">
+					<f:selectItems value="#{formPaises.paises}" noSelectionValue="true"
 					itemValue="#{controllerEngajador.engajador.pais}" />
-				</p:selectOneMenu><br></br>
+				</p:selectOneMenu>
+				<br></br>
     
 				<p:outputLabel value="Login: " for="login" />
-				<p:inputText label="Login" id="login" required="true" requiredMessage="Campo obrigatório"
+				<p:inputText label="Login" id="login" required="true" 
+				             requiredMessage="Informe o seu Login"
 					value="#{controllerEngajador.engajador.login}">
 					<f:validator validatorId="loginValidator" />
 				</p:inputText>
-				<p:message for="login" errorStyle="color:red; display:block" />
-
+				<br></br>
+				
 				<p:outputLabel value="Senha: " for="senha" />
-				<p:password label="Senha" id="senha" required="true" requiredMessage="Campo obrigatório"
+				<p:password label="Senha" id="senha" required="true" requiredMessage="Informe a sua Senha"
 					value="#{controllerEngajador.engajador.senha}">
 				</p:password><br></br>
 
