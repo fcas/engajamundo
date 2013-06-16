@@ -45,21 +45,22 @@
 
 		<div id="contentboxcontent">
 			<h:form id="busca">
+			<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
 				<h:panelGroup columns="3">
 					<p:outputLabel value="País: " for="nome" />
-					<p:inputText label="Nome" id="nome" required="true"
+					<p:inputText label="Nome" id="nome" required="true" requiredMessage="Informe o País"
 						value="#{controllerEngajador.query}">
 						<f:validator validatorId="nomeValidator" />
 					</p:inputText>
-					<p:message for="nome" errorStyle="color:red; display:block" />
 					<p:commandButton action="#{controllerEngajador.buscarEngajadorPorPais}"
-						value="Buscar" ajax="false"></p:commandButton>
+						value="Buscar" ajax="false"  update="growl"></p:commandButton>
 				</h:panelGroup>
 			</h:form>
 			<br/>
 			<h:panelGroup rendered="#{controllerEngajador.buscou==true}">
 				<h1>____________________________________________</h1><br/>
 				<h:form>
+				<p:growl id="growl" showSummary="false" showDetail="true" sticky="true" />
 				<table align="center" border="0" cellspacing="0" cellpadding="10">
 					<tr><th></th><th>Nome</th><th>Sobrenome</th><th>Email</th></tr>
 					<c:forEach items="#{controllerEngajador.usuarios}" var="usuario">
@@ -72,7 +73,7 @@
 					</c:forEach>
 				</table>
 				<p:commandButton actionListener="#{controllerEngajador.deletar}"
-						value="Deletar itens selecionados" ajax="false"></p:commandButton>
+						value="Deletar itens selecionados" ajax="false"  update="growl"></p:commandButton>
 				</h:form>
 			</h:panelGroup>
 		</div>
