@@ -26,6 +26,7 @@ public class ControllerEngajador {
 	private String query;
 	IServicoUsuario servicoUsuario = ServicoUsuario
 			.getInstance();
+	FacesContext context = FacesContext.getCurrentInstance();
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void selecionados(int tam)
@@ -75,17 +76,21 @@ public class ControllerEngajador {
 	public String cadastrarEngajador() {
 
 		String action = "";
-
+		 
 		try {
 				servicoUsuario.cadastrarEngajador(engajador);
 				action = "sucesso";
+				context.addMessage(null, new FacesMessage(engajador.getLogin(), "agora você faz parte do Engajamundo!"));
+				return action;
+
 		} catch (DaoException e) {
 			action = "erro";
 			System.out.println(e);
 		}
-
+		
 		return action;
 
+		
 	}
 	
 	public String deletar() {
