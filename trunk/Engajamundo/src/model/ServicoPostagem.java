@@ -18,11 +18,10 @@ public class ServicoPostagem {
 
 	private static ServicoPostagem singleton = null;
 
-	private IDAO daoEngajador;
+	
 	private IDAOPostagem daoPostagem;
 
 	public ServicoPostagem() {
-		this.daoEngajador = new DaoHibernate();
 		this.daoPostagem = new DAOPostagem();
 	}
 
