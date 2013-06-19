@@ -53,7 +53,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 						+ " foi cadastrado com sucesso!!!");
 			}
 		} catch (Exception e) {
-			throw new DaoException("Erro no cadastro");
+			throw new DaoException(e);
 		}
 
 	}
@@ -71,7 +71,7 @@ public class DaoEmMemoria implements IDAOEngajador {
 
 		}
 		if (usuarios.size() == 0)
-			throw new DaoException("Usuário não encontrado");
+			throw new DaoException(new Exception());
 		else
 			return usuarios;
 	}
