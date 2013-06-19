@@ -70,8 +70,8 @@ public class DAOGenericoJPA <T> implements IDaoGenerico <T> {
 		
 		EntityManager em = fabrica.createEntityManager();
 
-		Query query = em.createQuery("select f from " + tabela + " f where " + coluna + "= :parametro");
-		query.setParameter("parametro", parametro);
+		Query query = em.createQuery("select f from " + tabela + " f where " + coluna + " like "+"'%"+parametro+"%'");
+		//query.setParameter("parametro", parametro);
  
 		if (query.getResultList().size() == 0)
 			throw new BuscaSemResultadoException();
