@@ -2,7 +2,7 @@ package model;
 
 import java.util.List;
 
-import dao.DaoHibernate;
+import dao.DAOEngajador;
 import dao.IDAOEngajador;
 import entities.Engajador;
 import exceptions.BuscaSemResultadoException;
@@ -16,7 +16,7 @@ public class ServicoUsuario implements IServicoUsuario {
 	private IDAOEngajador daoEngajador;
 
 	public ServicoUsuario() {
-		this.daoEngajador = new DaoHibernate();
+		this.daoEngajador = new DAOEngajador();
 	}
 
 	public static IServicoUsuario getInstance() {
@@ -29,33 +29,32 @@ public class ServicoUsuario implements IServicoUsuario {
 
 	}
 
-	public List<Engajador> getUsers()
+	public List<Engajador> getUsers() throws DaoException
 	{
-		return daoEngajador.getUsers();
+		return daoEngajador.listar(Engajador.class.getName());
 	}
 	
 	@Override
 	public void cadastrarEngajador(Engajador engajador) {
 		try {
-			this.daoEngajador.cadastrarEngajador(engajador);
+			this.daoEngajador.cadastrar(engajador);
 		} catch (DaoException e) {
 			
 		}
 	}
 
-	@Override
-	public List<Engajador> buscarEngajador(String query) throws DaoException, BuscaSemResultadoException {
-		return daoEngajador.buscarEngajador(query);		
+	public List<Engajador> buscarEngajador(String nomeEngajador) throws DaoException, BuscaSemResultadoException {
+		return daoEngajador.buscar(Engajador.class.getSimpleName(), "nome", nomeEngajador);		
 	}
 	
 	@Override
-	public List<Engajador> buscarEngajadorPorPais(String query) throws BuscaSemResultadoException, DaoException{
-		return daoEngajador.buscarEngajadorPorPais(query);		
+	public List<Engajador> buscarEngajadorPorPais(String nomePais) throws BuscaSemResultadoException, DaoException{
+		return daoEngajador.buscar(Engajador.class.getSimpleName(), "pais", nomePais);		
 	}
 
 	@Override
-	public Engajador buscarPorLogin(String login) throws BuscaSemResultadoException{
-		return daoEngajador.buscarPorLogin(login);
+	public Engajador buscarPorLogin(String nomeLogin) throws BuscaSemResultadoException, DaoException{
+		return daoEngajador.buscar(Engajador.class.getSimpleName(), "login", nomeLogin).get(0);
 	}
 
 	@Override
@@ -64,13 +63,11 @@ public class ServicoUsuario implements IServicoUsuario {
 		return daoEngajador.autenticar(login, senha);
 	}
 	
-	public boolean deletar(String login) {
-		return daoEngajador.deletar(login);
+	public void deletar(String login) throws DaoException {
+		daoEngajador.deletar(login);
 	}
 	
-	@Override
-	public void editar(Engajador engajador, String login){
+	public void editar(Engajador engajador, String login) throws DaoException, BuscaSemResultadoException{
 		this.daoEngajador.editar(engajador, login);
-		
 	}
 }

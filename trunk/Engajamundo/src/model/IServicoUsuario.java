@@ -12,18 +12,18 @@ public interface IServicoUsuario {
 	
 	void cadastrarEngajador(Engajador engajador) throws DaoException;
 
-	List<Engajador> getUsers();
+	List<Engajador> getUsers() throws DaoException;
 
-	List<Engajador> buscarEngajador(String engajador) throws DaoException, BuscaSemResultadoException;
+	List<Engajador> buscarEngajador(String nome) throws DaoException, BuscaSemResultadoException;
 
-	List<Engajador> buscarEngajadorPorPais(String engajador) throws DaoException, BuscaSemResultadoException;
+	List<Engajador> buscarEngajadorPorPais(String pais) throws DaoException, BuscaSemResultadoException;
 	
-	Engajador buscarPorLogin(String login) throws BuscaSemResultadoException;
+	Engajador buscarPorLogin(String login) throws BuscaSemResultadoException, DaoException;
 
 	Engajador autenticar(String login, String senha) throws LoginInvalidoException;
 	
-	boolean deletar(String login);
+	void deletar(String login) throws DaoException;
 
-	void editar(Engajador engajador, String login);
+	void editar(Engajador engajador, String login) throws DaoException, BuscaSemResultadoException;
 	
 }

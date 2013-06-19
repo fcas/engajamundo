@@ -4,7 +4,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import dao.DaoHibernate;
-import dao.IDAOEngajador;
+import dao.IDAO;
 import entities.Crowdfunding;
 import entities.Engajador;
 
@@ -12,7 +12,7 @@ public class ServicoCrowdfunding {
 	
 	private static ServicoCrowdfunding singleton = null;
 
-	private IDAOEngajador daoEngajador;
+	private IDAO daoEngajador;
 
 	public ServicoCrowdfunding() {
 		this.daoEngajador = new DaoHibernate();

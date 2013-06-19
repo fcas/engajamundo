@@ -9,7 +9,7 @@ import entities.Crowdfunding;
 import entities.Engajador;
 import entities.Postagem;
 
-public class DaoEmMemoria implements IDAOEngajador {
+public class DaoEmMemoria implements IDAO {
 
 	private ArrayList<Engajador> engajadores;
 	private ArrayList<Postagem> postagens;
