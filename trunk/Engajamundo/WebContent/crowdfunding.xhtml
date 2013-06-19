@@ -46,8 +46,8 @@
 				<h:panelGroup>
 					<div id="contentboxcontent">
 						<h1> Meta de Capacitação - R$: <p:outputLabel value="#{controllerCrowdfunding.metaCapacitacao}"/> reais </h1>
-						<h1> Valor Captado - R$: <p:outputLabel value="#{controllerCrowdfunding.valorCapitado}"/> reais </h1>
-						<h1> <p:outputLabel value="#{controllerCrowdfunding.porcentagem}"/>% da meta alcançada </h1>
+						<h1> Valor Captado - R$: <p:outputLabel id="outt" value="#{controllerCrowdfunding.valorCapitado}"/> reais </h1>
+						<h1> <p:outputLabel id="outt" value="#{controllerCrowdfunding.porcentagem}"/>% da meta alcançada </h1>
 					</div>
 			
 			</h:panelGroup>
@@ -64,7 +64,7 @@
 				<br></br>
 				<br></br>
 				<p:commandButton action="#{controllerCrowdfunding.doar}"
-					value="Doar!"  update="doacao"></p:commandButton>
+					value="Doar!"  update="doacao, :outt"></p:commandButton>
 		</h:form></div>
 
 	</f:view>
