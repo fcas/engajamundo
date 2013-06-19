@@ -6,6 +6,7 @@ import javax.faces.bean.SessionScoped;
 import model.ServicoCrowdfunding;
 
 import entities.Crowdfunding;
+import exceptions.DaoException;
 
 @SessionScoped
 @ManagedBean(name="controllerCrowdfunding")
@@ -25,7 +26,7 @@ public class ControllerCrowdfunding {
 		this.metaCapacitacao = 200.000;
 	}
 	
-	public String doar(){
+	public String doar() throws DaoException{
 		servicoCrowdfunding.doar(doacao);
 		return "doacao";
 	}
