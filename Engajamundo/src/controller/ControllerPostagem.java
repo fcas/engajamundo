@@ -47,7 +47,7 @@ public class ControllerPostagem {
             return  "erro";
     }
 	
-	public void deletar(ActionEvent actionEvent){
+	public void deletar(ActionEvent actionEvent) throws DaoException{
 		FacesContext context = FacesContext.getCurrentInstance();  
 		HttpServletRequest req = (HttpServletRequest) context.getExternalContext().getRequest();  
 		int idPostagem = new Integer( req.getParameter("idPostagem") ).intValue();  
@@ -56,7 +56,7 @@ public class ControllerPostagem {
 		postagens = servicoPostagem.getPostagens();
 	}
 	
-	public ControllerPostagem(){
+	public ControllerPostagem() throws DaoException{
 		postagem = new Postagem();
 		postagens = servicoPostagem.getPostagens();
 	}

@@ -5,10 +5,13 @@ import java.util.List;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
+import dao.DAOPostagem;
 import dao.DaoHibernate;
 import dao.IDAO;
+import dao.IDAOPostagem;
 import entities.Engajador;
 import entities.Postagem;
+import exceptions.DaoException;
 import exceptions.UsuarioNaoAutenticadoException;
 
 public class ServicoPostagem {
@@ -16,9 +19,11 @@ public class ServicoPostagem {
 	private static ServicoPostagem singleton = null;
 
 	private IDAO daoEngajador;
+	private IDAOPostagem daoPostagem;
 
 	public ServicoPostagem() {
 		this.daoEngajador = new DaoHibernate();
+		this.daoPostagem = new DAOPostagem();
 	}
 
 	public static ServicoPostagem getInstance() {
@@ -31,11 +36,11 @@ public class ServicoPostagem {
 
 	}
 	
-	public List<Postagem> getPostagens(){
-		return daoEngajador.listarPostagens();
+	public List<Postagem> getPostagens() throws DaoException{
+		return daoPostagem.listar("Postagem");
 	}
 	
-	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException
+	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException, DaoException
     {
             post.setTags(tagAux);
             
@@ -49,10 +54,10 @@ public class ServicoPostagem {
             
             post.setLogin(login);
             
-            daoEngajador.savePost(post);
+            daoPostagem.cadastrar(post);
     }
 	
-	public void deletar(int idPostagem){
-		daoEngajador.deletarPostagem(idPostagem);
+	public void deletar(int idPostagem) throws DaoException{
+		daoPostagem.deletar(idPostagem);
 	}
 }
