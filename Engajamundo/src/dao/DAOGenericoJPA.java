@@ -16,7 +16,7 @@ import exceptions.DaoException;
 ;
 
 @SuppressWarnings("unused")
-public class DAOGenericoJPA <T> implements DaoGenerico <T> {
+public class DAOGenericoJPA <T> implements IDaoGenerico <T> {
 	
 	private Class<T> entidade;
     protected static final EntityManagerFactory fabrica = 
@@ -46,20 +46,6 @@ public class DAOGenericoJPA <T> implements DaoGenerico <T> {
 		}
 	}
 
-	@Override
-	public void editar(T entidade) throws DaoException {
-		EntityManager em = fabrica.createEntityManager();
-		em.getTransaction().begin();
-
-		try {
-			em.getTransaction().begin();
-			em.merge(entidade);
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			throw new DaoException(e);
-		}
-
-	}
 
 	@Override
 	public void deletar(String id) throws DaoException {
@@ -80,12 +66,12 @@ public class DAOGenericoJPA <T> implements DaoGenerico <T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<T> busca(String tabela, String parametro) throws DaoException, BuscaSemResultadoException {
+	public List<T> buscar(String tabela, String coluna, String parametro) throws DaoException, BuscaSemResultadoException {
 		
 		EntityManager em = fabrica.createEntityManager();
 
-		Query query = em.createQuery("select f from" + tabela +" f where" +  parametro + "=:" + parametro);
-		query.setParameter(parametro, parametro);
+		Query query = em.createQuery("select f from " + tabela + " f where " + coluna + "= :parametro");
+		query.setParameter("parametro", parametro);
  
 		if (query.getResultList().size() == 0)
 			throw new BuscaSemResultadoException();
@@ -98,7 +84,7 @@ public class DAOGenericoJPA <T> implements DaoGenerico <T> {
 		EntityManager em = fabrica.createEntityManager();
 
 		Query query = em
-				.createQuery("select f from" + tabela + " f where" + parametro + "=:" + parametro);
+				.createQuery("select f from " + tabela + " f where " + parametro + " = :" + parametro);
 		query.setParameter(parametro, parametro);
 
 		if (query.getResultList().isEmpty()) {
@@ -111,7 +97,7 @@ public class DAOGenericoJPA <T> implements DaoGenerico <T> {
 	public List<T> listar(String tabela) throws DaoException {
 		EntityManager em = fabrica.createEntityManager();
 
-		String query = "select p from" + tabela +  "p";
+		String query = "select p from " + tabela +  " p ";
 
 		return em.createQuery(query).getResultList();
 

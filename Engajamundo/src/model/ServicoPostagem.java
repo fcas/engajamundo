@@ -6,7 +6,7 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import dao.DaoHibernate;
-import dao.IDAOEngajador;
+import dao.IDAO;
 import entities.Engajador;
 import entities.Postagem;
 import exceptions.UsuarioNaoAutenticadoException;
@@ -15,7 +15,7 @@ public class ServicoPostagem {
 
 	private static ServicoPostagem singleton = null;
 
-	private IDAOEngajador daoEngajador;
+	private IDAO daoEngajador;
 
 	public ServicoPostagem() {
 		this.daoEngajador = new DaoHibernate();

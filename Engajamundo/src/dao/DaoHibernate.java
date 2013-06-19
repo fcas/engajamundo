@@ -14,7 +14,7 @@ import exceptions.BuscaSemResultadoException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
 
-public class DaoHibernate implements IDAOEngajador {
+public class DaoHibernate implements IDAO {
 	
 	public DaoHibernate(){
 		

@@ -8,7 +8,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 import dao.DaoHibernate;
-import dao.IDAOEngajador;
+import dao.IDAO;
 
 @FacesValidator(value = "loginValidator")
 public class ValidatorLogin implements Validator{
@@ -16,7 +16,7 @@ public class ValidatorLogin implements Validator{
 	@Override
 	public void validate(FacesContext contexto, UIComponent component, Object value)
 			throws ValidatorException {
-		IDAOEngajador daoEngajador = new DaoHibernate();
+		IDAO daoEngajador = new DaoHibernate();
 
 		if(daoEngajador.existeLogin(String.valueOf(value))){
 			System.out.println("Excecao DAO");

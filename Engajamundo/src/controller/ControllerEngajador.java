@@ -37,7 +37,7 @@ public class ControllerEngajador {
 	}
 	
 	@SuppressWarnings({ })
-	public ControllerEngajador() {
+	public ControllerEngajador() throws DaoException {
 		engajador = new Engajador();
 		usuarios = servicoUsuario.getUsers();
 		usuarioSelecionados = new ArrayList<Engajador>();
@@ -111,7 +111,7 @@ public class ControllerEngajador {
 		
 	}
 	
-	public String visualizar()
+	public String visualizar() throws DaoException
 	{
 		usuarios = (List<Engajador>) servicoUsuario.getUsers();
 		selecionados(usuarios.size());
@@ -126,7 +126,7 @@ public class ControllerEngajador {
 		return "buscas";
 	}
 	
-	public String atualizar()
+	public String atualizar() throws DaoException, BuscaSemResultadoException
 	{
 		String login;
 		
@@ -190,7 +190,7 @@ public class ControllerEngajador {
 		return usuarios;
 	}
 	
-	public List<Engajador> buscarEngajadores() {
+	public List<Engajador> buscarEngajadores() throws DaoException {
 		return servicoUsuario.getUsers();
 	}
 
