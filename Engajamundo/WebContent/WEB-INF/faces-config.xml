@@ -11,11 +11,15 @@
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+			 
 		</navigation-case>
+		 
 		<navigation-case>
 			<from-outcome>erro</from-outcome>
 			<to-view-id>/operacaoFail.xhtml</to-view-id>
+			 
 		</navigation-case>
+		
 	</navigation-rule>
 
 	<navigation-rule>
@@ -24,15 +28,21 @@
 		<navigation-case>
 			<from-outcome>sucesso</from-outcome>
 			<to-view-id>/operacaoSucesso.xhtml</to-view-id>
+			 
 		</navigation-case>
+	
 		<navigation-case>
 			<from-outcome>erro</from-outcome>
 			<to-view-id>/operacaoFail.xhtml</to-view-id>
+			 
 		</navigation-case>
+		
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+			 
 		</navigation-case>
+		 
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/visualizacao.xhtml</to-view-id>
@@ -53,11 +63,14 @@
 		<navigation-case>
 			<from-outcome>admin</from-outcome>
 			<to-view-id>/boasvindas.xhtml</to-view-id>
+			
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+			 
 		</navigation-case>
+		
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/visualizacao.xhtml</to-view-id>
@@ -78,11 +91,15 @@
 		<navigation-case>
 			<from-outcome>engajador</from-outcome>
 			<to-view-id>/boasvindas.xhtml</to-view-id>
+			 
 		</navigation-case>
+	
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+			 
 		</navigation-case>
+		
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/visualizacao.xhtml</to-view-id>
@@ -103,10 +120,13 @@
 		<navigation-case>
 			<from-outcome>BuscarPorNome</from-outcome>
 			<to-view-id>/buscaPorNome.xhtml</to-view-id>
+			<redirect />
 		</navigation-case>
+
 		<navigation-case>
 			<from-outcome>BuscarPorPais</from-outcome>
 			<to-view-id>/buscaPorPais.xhtml</to-view-id>
+			<redirect />
 		</navigation-case>
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
@@ -130,7 +150,9 @@
 	<navigation-rule>
 		<display-name>buscaPorNome</display-name>
 		<from-view-id>/buscaPorNome.xhtml</from-view-id>
+		<redirect />
 		<navigation-case>
+		  
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
@@ -151,7 +173,9 @@
 	<navigation-rule>
 		<display-name>boasvindas</display-name>
 		<from-view-id>/boasvindas.xhtml</from-view-id>
+		
 		<navigation-case>
+		  
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
 		</navigation-case>
@@ -172,10 +196,13 @@
 	<navigation-rule>
 		<display-name>buscaPorPais</display-name>
 		<from-view-id>/buscaPorPais.xhtml</from-view-id>
+		<redirect />
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+			
 		</navigation-case>
+	
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/visualizacao.xhtml</to-view-id>
@@ -267,7 +294,9 @@
 		<navigation-case>
 			<from-outcome>logoff</from-outcome>
 			<to-view-id>/home.xhtml</to-view-id>
+			
 		</navigation-case>
+		  
 		<navigation-case>
 			<from-outcome>Visualizar</from-outcome>
 			<to-view-id>/visualizacao.xhtml</to-view-id>
