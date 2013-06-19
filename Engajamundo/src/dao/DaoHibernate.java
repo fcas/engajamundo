@@ -20,7 +20,7 @@ public class DaoHibernate implements IDAO {
 		
 	}
 	
-	public void cadastrarEngajador(Engajador engajador) throws DaoException {
+	public void cadastrarEngajador(Engajador engajador) throws DaoException { //DAOEngajador
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -29,7 +29,7 @@ public class DaoHibernate implements IDAO {
 	}
 
 	@Override
-	public void savePost(Postagem post) {
+	public void savePost(Postagem post) { //DAOPostagem
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -39,7 +39,7 @@ public class DaoHibernate implements IDAO {
 	}
 
 	@Override
-	public void saveDoacao(Crowdfunding doacao) {
+	public void saveDoacao(Crowdfunding doacao) {//daoCrowdfunding
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
@@ -48,7 +48,7 @@ public class DaoHibernate implements IDAO {
 	}
 
 	@Override
-	public void editar(Engajador engajador, String login) {
+	public void editar(Engajador engajador, String login) { //DAOEngajador
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -67,7 +67,7 @@ public class DaoHibernate implements IDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Engajador> buscarEngajador (String nome)
+	public List<Engajador> buscarEngajador (String nome) //DAOEngajador
 			throws DaoException, BuscaSemResultadoException {
 		
 		EntityManagerFactory factory = Persistence
@@ -115,7 +115,7 @@ public class DaoHibernate implements IDAO {
 	    return query.getResultList();
 	}
 
-	public boolean deletar(String login) {
+	public boolean deletar(String login) { //DAOEngajador
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -133,7 +133,7 @@ public class DaoHibernate implements IDAO {
 	
 	}
 
-	public void deletarPostagem(int idPostagem)
+	public void deletarPostagem(int idPostagem) //DAOPostagem
 	{
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -147,7 +147,7 @@ public class DaoHibernate implements IDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Postagem> listarPostagens() {  
+	public List<Postagem> listarPostagens() {  //DAOPostagem
 	    
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -160,7 +160,7 @@ public class DaoHibernate implements IDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Engajador> getUsers() {
+	public List<Engajador> getUsers() { //DAOEngajador
 
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -173,7 +173,7 @@ public class DaoHibernate implements IDAO {
 	}
 
 	@Override
-	public Engajador autenticar(String login, String senha) throws LoginInvalidoException{
+	public Engajador autenticar(String login, String senha) throws LoginInvalidoException{ //DAOEngajador
 		try{
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -191,7 +191,7 @@ public class DaoHibernate implements IDAO {
 	}
 
 	@Override
-	public boolean existeLogin(String login) {
+	public boolean existeLogin(String login) { //DAOEngajador
 	
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
@@ -207,7 +207,7 @@ public class DaoHibernate implements IDAO {
 	}
 	
 	@Override
-	public Double getDoacoes() {
+	public Double getDoacoes() { //DAOCrowdfunding
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
 		EntityManager em = factory.createEntityManager();
