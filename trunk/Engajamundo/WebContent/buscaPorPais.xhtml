@@ -50,6 +50,7 @@
 					<p:outputLabel value="País: " for="nome" />
 					<p:inputText label="Nome" id="nome" required="true" requiredMessage="Informe o País"
 						value="#{controllerEngajador.query}">
+						<p:watermark for="nome" value="Informe o país" />
 						<f:validator validatorId="nomeValidator" />
 					</p:inputText>
 					<p:commandButton action="#{controllerEngajador.buscarEngajadorPorPais}"
