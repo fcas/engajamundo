@@ -10,6 +10,7 @@ import javax.faces.event.ActionEvent;
 import javax.servlet.http.HttpServletRequest;
 
 import entities.Postagem;
+import exceptions.CadastroFailException;
 import exceptions.DaoException;
 import exceptions.UsuarioNaoAutenticadoException;
 import model.ServicoPostagem;
@@ -43,7 +44,10 @@ public class ControllerPostagem {
                     FacesMessage message = new FacesMessage("Login necessário");  
         message.setSeverity(FacesMessage.SEVERITY_ERROR);  
         FacesContext.getCurrentInstance().addMessage("home:password", message);
+            } catch (CadastroFailException e) {
+                return "erro";
             }
+            
             return  "erro";
     }
 	

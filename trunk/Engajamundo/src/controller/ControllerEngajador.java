@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 import exceptions.BuscaSemResultadoException;
+import exceptions.CadastroFailException;
 import exceptions.DaoException;
 import entities.Engajador;
 import model.IServicoUsuario;
@@ -80,10 +81,13 @@ public class ControllerEngajador {
 		try {
 				servicoUsuario.cadastrarEngajador(engajador);
 				action = "sucesso";
-			//	context.addMessage(null, new FacesMessage(engajador.getLogin(), "agora você faz parte do Engajamundo!"));				
+				FacesContext context = FacesContext.getCurrentInstance(); 
+				context.addMessage(null, new FacesMessage("", engajador.getLogin() +  ", agora você faz parte do Engajamundo!"));				
 		} catch (DaoException e) {
 			action = "erro";
 			System.out.println(e);
+		} catch (CadastroFailException e) {
+		    action = "erro";
 		}
 		
 		return action;
