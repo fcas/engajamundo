@@ -20,5 +20,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/home/felipe/eclipse/artifacts.jar"/>
 	<classpathentry kind="lib" path="/home/felipe/eclipse/content.jar"/>
+	<classpathentry kind="lib" path="/home/felipe/workspace/Engajamundo/lib/twitter4j-core-3.0.3.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
