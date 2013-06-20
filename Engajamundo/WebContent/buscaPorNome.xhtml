@@ -50,8 +50,9 @@
 			<h:panelGroup columns="3" >
 				<p:outputLabel value="Nome: " for="nome" />
 				<p:inputText label="Nome" id="nome" required="true" requiredMessage="Informe o Nome"
-					value="#{controllerEngajador.query}">
+					value="#{controllerEngajador.query}" >
 					<f:validator validatorId="nomeValidator" />
+					<p:watermark for="nome" value="Informe o nome" />
 				</p:inputText>
 				<p:commandButton action="#{controllerEngajador.buscarEngajadorPorNome}"
 					value="Buscar"  ajax="true" update=":formularioRender, :panel"></p:commandButton>
