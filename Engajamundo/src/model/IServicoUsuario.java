@@ -5,12 +5,13 @@ import java.util.List;
 
 import entities.Engajador;
 import exceptions.BuscaSemResultadoException;
+import exceptions.CadastroFailException;
 import exceptions.DaoException;
 import exceptions.LoginInvalidoException;
 
 public interface IServicoUsuario {
 	
-	void cadastrarEngajador(Engajador engajador) throws DaoException;
+	void cadastrarEngajador(Engajador engajador) throws DaoException, CadastroFailException;
 
 	List<Engajador> getUsers() throws DaoException;
 

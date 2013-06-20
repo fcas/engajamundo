@@ -11,4 +11,6 @@ public interface IDAOEngajador extends IDaoGenerico<Engajador> {
 
 	void editar(Engajador engajador, String login) throws DaoException, BuscaSemResultadoException;
 
+	boolean existeLogin(String valueOf);
+
 }

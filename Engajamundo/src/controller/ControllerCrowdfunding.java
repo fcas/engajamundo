@@ -6,6 +6,7 @@ import javax.faces.bean.SessionScoped;
 import model.ServicoCrowdfunding;
 
 import entities.Crowdfunding;
+import exceptions.CadastroFailException;
 import exceptions.DaoException;
 
 @SessionScoped
@@ -27,8 +28,14 @@ public class ControllerCrowdfunding {
 	}
 	
 	public String doar() throws DaoException{
-		servicoCrowdfunding.doar(doacao);
-		return "doacao";
+		String action = "";
+	    try {
+            servicoCrowdfunding.doar(doacao);
+            action = "doacao";
+        } catch (CadastroFailException e) {
+            action = "error";
+        }
+		return action;
 	}
 
 	public Crowdfunding getDoacao() {

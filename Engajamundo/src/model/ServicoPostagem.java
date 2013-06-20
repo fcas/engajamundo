@@ -6,11 +6,10 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 import dao.DAOPostagem;
-import dao.DaoHibernate;
-import dao.IDAO;
 import dao.IDAOPostagem;
 import entities.Engajador;
 import entities.Postagem;
+import exceptions.CadastroFailException;
 import exceptions.DaoException;
 import exceptions.UsuarioNaoAutenticadoException;
 
@@ -39,8 +38,13 @@ public class ServicoPostagem {
 		return daoPostagem.listar("Postagem");
 	}
 	
-	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException, DaoException
+	public void postar(Postagem post, String tagAux) throws UsuarioNaoAutenticadoException, DaoException, CadastroFailException
     {
+	    if (post == null || post.equals(null) ||
+	        post.getTitulo().equals(null) ||
+	        post.getTexto().equals(null))
+	        throw new CadastroFailException();
+	    else {
             post.setTags(tagAux);
             
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(true);
@@ -54,6 +58,7 @@ public class ServicoPostagem {
             post.setLogin(login);
             
             daoPostagem.cadastrar(post);
+	    }
     }
 	
 	public void deletar(int idPostagem) throws DaoException{

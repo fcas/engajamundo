@@ -10,7 +10,7 @@ create table Postagem (idPostagem INT PRIMARY KEY not null auto_increment, login
 
 ALTER TABLE Postagem ADD FOREIGN KEY (login) REFERENCES Engajador(login);
 
-create table Crowdfunding(id INT PRIMARY KEY not null auto_increment, login VARCHAR(20), doacao double);
+create table Crowdfunding(id INT PRIMARY KEY not null auto_increment, login VARCHAR(20), doacao double, metaCapacitacao double, porcentagem double, qtdPatrocinadores INT(11), valorCapitado double);
 
 ALTER TABLE Crowdfunding ADD FOREIGN KEY (login) REFERENCES Engajador(login);
 

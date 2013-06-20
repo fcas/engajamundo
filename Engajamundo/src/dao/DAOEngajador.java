@@ -47,4 +47,20 @@ public class DAOEngajador extends DAOGenericoJPA<Engajador> implements IDAOEngaj
 	
 	}
 
+	@Override
+	public boolean existeLogin(String login) { //DAOEngajador
+	
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("engajamundoDB");
+		EntityManager em = factory.createEntityManager();
+
+		Query query = em
+				.createQuery("select f from Engajador f where login = :login");
+		query.setParameter("login", login);
+
+		if (query.getResultList().isEmpty()) {
+			return false;
+		} else return true;
+	}
+
 }
