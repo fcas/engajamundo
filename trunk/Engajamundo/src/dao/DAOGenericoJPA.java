@@ -66,15 +66,15 @@ public class DAOGenericoJPA <T> implements IDaoGenerico <T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<T> buscar(String tabela, String coluna, String parametro) throws DaoException, BuscaSemResultadoException {
+	public List<T> buscar(String tabela, String coluna, String parametro) throws DaoException {
 		
 		EntityManager em = fabrica.createEntityManager();
 
 		Query query = em.createQuery("select f from " + tabela + " f where " + coluna + " like "+"'%"+parametro+"%'");
 		//query.setParameter("parametro", parametro);
  
-		if (query.getResultList().size() == 0)
-			throw new BuscaSemResultadoException();
+		if (query == null || query.equals(null) || query.getResultList().size() == 0)
+			return null;
         return query.getResultList();
 
 	}

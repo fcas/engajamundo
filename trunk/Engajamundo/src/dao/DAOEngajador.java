@@ -30,7 +30,7 @@ public class DAOEngajador extends DAOGenericoJPA<Engajador> implements IDAOEngaj
 			}
 	}
 	
-	public void editar(Engajador engajador, String login) throws DaoException, BuscaSemResultadoException {
+	public void editar(Engajador engajador, String login) throws DaoException {
 		
 		EntityManagerFactory factory = Persistence
 				.createEntityManagerFactory("engajamundoDB");
