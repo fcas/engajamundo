@@ -25,7 +25,6 @@
    <a href = "crowdfunding.xhtml">Patrocine!</a>
    <a href = "video.xhtml">LiveStream</a>
    <a href = "tweets.xhtml">Tweets</a>
-   <br/>
    <!-- apenas usuarios e admins -->
 <h:form>
 	<p:commandLink action="#{controllerEngajador.visualizar}" rendered="#{controllerSession.ehAdmin}">Usuários </p:commandLink>
@@ -33,6 +32,8 @@
 	<p:commandLink action="#{controllerEngajador.buscas}" rendered="#{controllerSession.estaLogado}">Buscas </p:commandLink>
 <p:commandLink action="#{controllerSession.logoff}" rendered="#{controllerSession.estaLogado}"
 					value="Logoff"></p:commandLink></h:form>
+					<br/>
+   
    </div>
 </div>
 
