@@ -64,12 +64,20 @@ public class ServicoUsuario implements IServicoUsuario {
 	}
 
 	public List<Engajador> buscarEngajador(String nomeEngajador) throws DaoException, BuscaSemResultadoException {
-		return daoEngajador.buscar(Engajador.class.getSimpleName(), "nome", nomeEngajador);		
+		Lis<Engajador> resultado = daoEngajador.buscar(Engajador.class.getSimpleName(), "nome", nomeEngajador);
+	    if (resultado == null || resultado.equals(null))
+	        throw new BuscaSemResultadoException();
+	    else
+	        return resultado; 
 	}
 	
 	@Override
 	public List<Engajador> buscarEngajadorPorPais(String nomePais) throws BuscaSemResultadoException, DaoException{
-		return daoEngajador.buscar(Engajador.class.getSimpleName(), "pais", nomePais);		
+	    Lis<Engajador> resultado = daoEngajador.buscar(Engajador.class.getSimpleName(), "pais", nomePais);
+        if (resultado == null || resultado.equals(null))
+            throw new BuscaSemResultadoException();
+        else
+            return resultado; 		
 	}
 
 	@Override
