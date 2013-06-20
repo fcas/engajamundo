@@ -22,6 +22,8 @@ public class ControllerTweets {
 	private List<MyTweets> tweets;
 	
 	public List<MyTweets> getTweets() {
+		TwitterAdapter tAdapter = new TwitterAdapter();
+		tweets = tAdapter.getTweetsEngajamundo();
 		return tweets;
 	}
 
