@@ -17,7 +17,7 @@ public class TwitterAdapter {
 	public TwitterAdapter(){
 		twitter = new TwitterFactory().getInstance();
 		twitter.setOAuthConsumer("QhQeMdE91TzpdGLLuTuJ3A", "uABa7iknbYuKZx60JI9mEhdt7AYRS02hxyYkEImODz0");
-		AccessToken at = new AccessToken("159087940-1tYx82rLvHiQg0EENkMuPcGimQSfRPMADUgFVyGh", "hgvA3ETfPvrntcRCUIbKKnLS0JrzWKCijenEnb5MfY");
+		AccessToken at = new AccessToken("159087940-QpfkJVa5nqKSSnUkJj6YExgOOHt9WyM0Kdn795M4", "AaC00rylOofJynUgVBz2llw34BuNcz2G8vhTANee8");
 		twitter.setOAuthAccessToken(at);
 	}
 	
